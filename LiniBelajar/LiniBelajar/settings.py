@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$i-+k7dqa8hj45!7-)-s7ti5&tlm5m)w3!jz^^u!xysu0il(yw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['www.linibelajar.com', 'linibelajar.com']
+ALLOWED_HOSTS = ['167.99.64.21']
 
 
 # Application definition
