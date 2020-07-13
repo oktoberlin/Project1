@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$i-+k7dqa8hj45!7-)-s7ti5&tlm5m)w3!jz^^u!xysu0il(yw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.linibelajar.com', 'linibelajar.com']
 
 
 # Application definition
@@ -124,3 +124,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
