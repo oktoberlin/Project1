@@ -25,7 +25,7 @@ SECRET_KEY = '$i-+k7dqa8hj45!7-)-s7ti5&tlm5m)w3!jz^^u!xysu0il(yw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['167.99.64.21']
+ALLOWED_HOSTS = ['167.99.64.21', 'linibelajar.com', 'wwww.linibelajar.com']
 
 
 # Application definition
