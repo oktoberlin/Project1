@@ -1,10 +1,12 @@
 {% extends 'layout.html' %}
 {% block content %}
-    <h2>Kamu telah Logout</h2>
+<div class="container mb-5 p-5 text-center">
+    <h2 class="logout">Kamu telah Logout</h2>
 
     <div class="border-top pt-3">
         <small class="text-muted">
             <a class="ml-2" href="{% url 'login' %}">Login lagi?</a>
         </small>
     </div>
+</div>
 {% endblock content%}

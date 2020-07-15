@@ -1,19 +1,19 @@
 {% extends 'layout.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="container mb-5">
-    <div class="content-section">
-        <form method="POST">
+<div class="container mb-5 card shadow-sm p-3">
+    <div class="content-section px-5">
+        <form method="POST" class="mb-2 font-weight-bold">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Login Yuk</legend>
+                <legend class="border-bottom mb-4 text-center">Buat Akun Baru</legend>
                 {{ form|crispy }}
             </fieldset>
             <div>
                 <button class="btn btn-outline-info" type="submit">Daftar</button>
             </div>
         </form>
-        <div class="border-top pt-3">
+        <div class="border-top pt-4">
             <small class="text-muted">
                 Sudah Punya Akun? <a class="ml-2" href="#">Login</a>
             </small>
