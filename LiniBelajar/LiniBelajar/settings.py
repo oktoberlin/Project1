@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['167.99.64.21', 'linibelajar.com',
 INSTALLED_APPS = [
     'home',
     'user',
+    'quiz',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
