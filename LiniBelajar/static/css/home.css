@@ -64,6 +64,14 @@ h4 {
 	background-color: #602cc9 !important;
 }
 
-.coba {
-	background-color: black !important;
+footer {
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	z-index: -1;
+}
+
+img {
+	margin-bottom: 50px;
 }

@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}?v={4}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}?v={6}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
     crossorigin="anonymous">
     
@@ -45,13 +45,35 @@
                     <li class="nav-item mr-4">
                         <a class="nav-link pt-3 navfont" href="#">Event</a>
                     </li>
-                    
-                    <li class="nav-item active mr-5">
-                        <button type="button" class="btn btn-sm counseling shadow-sm rounded"><a class="nav-link counselingitem" href="{% url 'register' %}">Daftar Kelas Gratis</a></button>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item active mr-3">
+                        <button type="button" class="btn btn-sm counseling shadow-sm rounded"><a class="nav-link counselingitem" href="{% url 'profile' %}">Profil</a></button>
                     </li>
+
+                    <li class="nav-item active mr-3">
+                        <button type="button" class="btn btn-sm counseling shadow-sm rounded"><a class="nav-link counselingitem" href="{% url 'logout' %}">Logout</a></button>
+                    </li>
+                    {% else %}
+                    <li class="nav-item active mr-3">
+                        <button type="button" class="btn btn-sm counseling shadow-sm rounded"><a class="nav-link counselingitem" href="{% url 'login' %}">Login</a></button>
+                    </li>
+                    <li class="nav-item active mr-5">
+                        <button type="button" class="btn btn-sm counseling shadow-sm rounded"><a class="nav-link counselingitem" href="{% url 'register' %}">Daftar</a></button>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
+    </div>
+
+    <div class="col-md-8">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
     </div>
 
     <div>
@@ -59,16 +81,11 @@
         {% endblock %}
     </div>
 
-    <!-- Footer -->
-    <footer class="page-footer font-small unique-color-dark coba">
-      <!-- Copyright -->
+    <footer class="page-footer font-small unique-color-dark bg-secondary mt-5">
       <div class="footer-copyright text-center py-3 text-white">© 2020
-        <a href="https://mdbootstrap.com/" style="color: white;">LiniBelajar</a>
+        <a href="{% url 'home' %}" style="color: white;">LiniBelajar</a>
       </div>
-      <!-- Copyright -->
-
     </footer>
-    <!-- Footer -->
 
 
     <!-- Optional JavaScript -->
