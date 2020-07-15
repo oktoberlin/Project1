@@ -2,45 +2,17 @@
 {% load static %}
 
 {% block content %}
-    <div class="card shadow-sm">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light mynav">
-            <a class="navbar-brand ml-5 brandname" href="#">Lini Belajar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto color">
-                    <li class="nav-item dropdown mr-3">
-                        <a class="nav-link dropdown-toggle pt-3 navfont" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Materi Pembelajaran
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item active mr-3">
-                        <a class="nav-link pt-3 navfont" href="#">Komunitas<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item mr-4">
-                        <a class="nav-link pt-3 navfont" href="#">Konseling</a>
-                    </li>
-
-                    <li class="nav-item mr-4">
-                        <a class="nav-link pt-3 navfont" href="#">Event</a>
-                    </li>
-                    
-                    <li class="nav-item active mr-5">
-                        <button type="button" class="btn btn-sm counseling shadow-sm rounded"><a class="nav-link counselingitem" href="#">Daftar Kelas Gratis</a></button>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+    <div class="col-md-8">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
     </div>
-
     <h4 class="display-4 mt-5">Temukan Strategi Belajar Terbaikmu di sini!</h4>
 
 
@@ -49,16 +21,6 @@
     </div>
 
 
-<!-- Footer -->
-<footer class="page-footer font-small unique-color-dark coba">
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3 text-white">© 2020
-    <a href="https://mdbootstrap.com/" style="color: white;">LiniBelajar</a>
-  </div>
-  <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
 
 
 {% endblock %}
