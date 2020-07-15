@@ -87,7 +87,7 @@ html {
 }
 body {
 	/* Margin bottom by footer height */
-	margin-bottom: 60px;
+	margin-bottom: 120px;
 }
 .footer {
 	position: absolute;
@@ -114,4 +114,26 @@ body {
 .dropdown-item:hover {
 	background-color: white !important;
 	color: #7d3cff !important;
+}
+
+.quiz {
+	color: #f2a413 !important;
+}
+
+.quiz-top {
+	background-color: #6a41bf !important;
+}
+
+.quiz-button {
+	background-color: #ffb60d;
+}
+
+.quiz-link {
+	color: #7d3cff !important;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.quiz-button:hover {
+	background-color: white !important;
 }
