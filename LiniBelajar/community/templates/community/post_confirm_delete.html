@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container mb-5 card shadow-sm p-3">
+    <div class="content-section px-5">
+        <form method="POST" class="mb-2 font-weight-bold">
+            {% csrf_token %}
+            <fieldset class="form-group text-center">
+                <legend class="border-bottom mb-4">Hapus Post</legend>
+                <h4>Yakin ingin menghapus post "{{ object.title }}"</h4>
+            </fieldset>
+            <div class="text-center mt-4">
+                <button class="btn btn-outline-danger" type="submit">Ya, Hapus</button>
+                <a class="btn btn-outline-secondary" type="submit" href="{% url 'post-detail' object.id %}">Batalkan</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

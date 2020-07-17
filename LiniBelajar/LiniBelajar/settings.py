@@ -32,10 +32,10 @@ ALLOWED_HOSTS = ['167.99.64.21', 'linibelajar.com',
 # Application definition
 
 INSTALLED_APPS = [
-    'home',
-    'user',
-    'quiz',
-    'community',
+    'home.apps.HomeConfig',
+    'user.apps.UserConfig',
+    'quiz.apps.QuizConfig',
+    'community.apps.CommunityConfig',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -74,6 +74,10 @@ TEMPLATES = [
         },
     },
 ]
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)
 
 WSGI_APPLICATION = 'LiniBelajar.wsgi.application'
 
