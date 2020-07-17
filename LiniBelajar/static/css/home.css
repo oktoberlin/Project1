@@ -138,5 +138,7 @@ body {
 }
 
 .author {
-	color: #7d3cff !important;
+	color: black !important;
+	font-size: 20px;
+	font-weight: bold;
 }
