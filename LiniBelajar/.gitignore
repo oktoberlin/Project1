@@ -1,4 +1,4 @@
 # Ignore files related to API keys
 .env
 
-db.sqlite3
+*.sqlite3
