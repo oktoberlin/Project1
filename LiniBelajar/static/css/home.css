@@ -60,7 +60,6 @@ h1 {
 
 h4 {
 	color: #691fff !important;
-	text-align: center;
 	margin-bottom: 0px;
 }
 
@@ -136,4 +135,8 @@ body {
 
 .quiz-button:hover {
 	background-color: white !important;
+}
+
+.author {
+	color: #7d3cff !important;
 }

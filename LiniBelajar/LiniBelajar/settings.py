@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'home',
     'user',
     'quiz',
+    'community',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',

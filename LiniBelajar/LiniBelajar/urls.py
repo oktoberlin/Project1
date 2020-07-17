@@ -22,6 +22,7 @@ from user import views as user_views
 
 urlpatterns = [
     path('', include('home.urls'), name='home'),
+    path('komunitas/', include('community.urls'), name='komunitas'),
     path('quiz', include('quiz.urls'), name='quiz'),
     path('admin/', admin.site.urls),
     path('register/', user_views.register, name='register'),
