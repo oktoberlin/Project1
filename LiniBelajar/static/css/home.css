@@ -58,11 +58,6 @@ h1 {
 	margin-top: 30px;
 }
 
-h4 {
-	color: #691fff !important;
-	margin-bottom: 0px;
-}
-
 img {
 	margin-bottom: 50px;
 }
@@ -83,6 +78,7 @@ fieldset {
 html {
 	position: relative;
 	min-height: 100%;
+	font-size: 16px;
 }
 body {
 	/* Margin bottom by footer height */
@@ -145,4 +141,8 @@ body {
 
 .login-post {
 	color: #ffb60d;
+}
+
+.login-title {
+	font-size: small;
 }

@@ -1,12 +1,14 @@
 {% extends 'layout.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
+<h4 class="display-4 text-center login-title mb-4">Berbagi untuk Indonesia Merdeka Belajar</h4>
+    
 <div class="container mb-5 card shadow-sm p-3">
     <div class="content-section px-5">
         <form method="POST" class="mb-2 font-weight-bold">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4 text-center">Login</legend>
+                <legend class="border-bottom mb-4 text-center">Login LiniBelajar</legend>
                 {{ form|crispy }}
             </fieldset>
             <div>

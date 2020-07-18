@@ -1,0 +1,13 @@
+<div class="wrap text-center">
+    <div id="main" class="container clear-top">
+        <div class="col-md-8 text-center mb-3">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>

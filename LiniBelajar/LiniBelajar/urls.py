@@ -21,13 +21,14 @@ from django.conf.urls.static import static
 from user import views as user_views
 
 urlpatterns = [
-    path('', include('home.urls'), name='home'),
-    path('komunitas/', include('community.urls')),
+    path('', include('community.urls'), name='community'),
+    #path('komunitas/', include('community.urls')),
     path('quiz', include('quiz.urls'), name='quiz'),
     path('admin/', admin.site.urls),
     path('register/', user_views.register, name='register'),
     path('profile/', user_views.profile, name='profile'),
-    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    path('login/', auth_views.LoginView.as_view(
+        template_name='login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),
 ]
 
