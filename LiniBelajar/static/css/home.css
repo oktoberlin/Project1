@@ -78,7 +78,6 @@ fieldset {
 html {
 	position: relative;
 	min-height: 100%;
-	font-size: 30px;
 }
 body {
 	/* Margin bottom by footer height */
@@ -144,5 +143,11 @@ body {
 }
 
 .login-title {
-	font-size: small;
+	color: #ffb60d;
+	font-size: 37px;
+}
+
+.login-icon {
+	color: #7d3cff !important;
+	font-size: 40px;
 }
