@@ -1,9 +1,9 @@
 {% extends 'layout.html' %}
 {% block content %}
 {% include 'nav-bar.html' %}
-{% include 'message.html' %}
 
 <div class="container">
+    {% include 'message.html' %}
     <h4 class="display-4 text-center mb-2 home-title" style="margin-top:-20px;">Berbagi Pengalaman di sini</h4>
 
         <div class="text-center mt-0 mb-4">
@@ -11,7 +11,7 @@
         </div>
         
     {% for post in posts %}
-    <article class="media content-section border border-info rounded shadow-sm p-3 mb-3">
+    <article class="media content-section border border-info rounded shadow-sm p-3 mb-3 mx-5">
     <img class="rounded-circle article-img mr-2" width="25" src="{{ post.author.profile.image.url }}">
         <div class="media-body">
             <div class="article-metadata">
