@@ -1,10 +1,13 @@
+{% load static %}
 <div class="shadow-sm">
-    <nav class="navbar navbar-expand-sm navbar-light bg-light mynav ml-auto mb-5">
-        <a class="navbar-brand mr-auto brandname" href="{% url 'community' %}">Lini Belajar</a>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light mynav ml-auto mb-5 line-height">
+        <a class="navbar-brand" href="{% url 'community' %}" style="margin-bottom: -45px;">
+            <img src="{% static 'gambar/logo-nav.png' %}" width="150" class="d-inline-block align-center" alt="">
+        </a>
         
         <ul class="navbar-nav ml-5 justify-content-between">
-            <li class="nav-item pt-2 mr-3">
-                <a class="navfont" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kelas Online Gratis</a>
+            <li class="nav-item pt-2 mr-1" style="margin-top:-10px;">
+                <a class="navfont" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kelas Gratis</a>
             </li>
         </ul>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

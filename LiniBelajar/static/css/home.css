@@ -5,6 +5,7 @@
 .line-height {
 	line-height: 14px;
 	margin-top: 7px;
+	margin-bottom: 9px;
 }
 .navfont {
 	color: #7d3cff !important;
@@ -19,19 +20,9 @@ h1 {
 	color: #7d3cff;
 }
 
-.navbar {
-	min-height: 70px;
-}
-
-.brandname {
-	color: #7d3cff !important;
-	font-weight: bold;
-	font-size: 30px;
-}
-
-.brandname:hover {
-	color: #fabe3c !important;
-}
+/*.navbar-brand {
+	min-height: 40px;
+}*/
 
 .counseling {
 	border-radius: 40px;
@@ -78,6 +69,7 @@ fieldset {
 html {
 	position: relative;
 	min-height: 100%;
+	font-size: 15px;
 }
 body {
 	/* Margin bottom by footer height */
@@ -144,10 +136,11 @@ body {
 
 .login-title {
 	color: #ffb60d;
-	font-size: 37px;
+	font-size: 27px;
 }
 
 .login-icon {
-	color: #7d3cff !important;
-	font-size: 40px;
+	text-align: center;
+	margin-top: 25px;
+	margin-bottom: -30px;
 }
