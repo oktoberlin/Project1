@@ -29,9 +29,12 @@
                 Belum Punya Akun? <a class="ml-2" href="{% url 'register' %}">Daftar di sini</a>
             </small>
         </div>
-
+        
         <div>
-            <button><a href="{% provider_login_url 'google' %}">Login Google</a></button>
+            <div class="mt-2 mr-3">
+            <a href="{% provider_login_url 'google' %}"><i class="fa fa-google"> Login Gmail</i>
+            </a>
+            </div>
         </div>
     </div>
 </div>
