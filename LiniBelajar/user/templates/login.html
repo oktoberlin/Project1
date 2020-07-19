@@ -21,10 +21,13 @@
                 {{ form|crispy }}
             </fieldset>
             <div>
-                <button class="btn btn-outline-info" type="submit">Login</button>
+                <button class="btn btn-outline-info mb-2" type="submit">Login</button>
+                <small class="text-muted ml-2"><a href="{% url 'password_reset' %}">Lupa Password?</a>
+                </small>
             </div>
+            
         </form>
-        <div class="border-top pt-4">
+        <div class="border-top pt-2">
             <small class="text-muted">
                 Belum Punya Akun? <a class="ml-2" href="{% url 'register' %}">Daftar di sini</a>
             </small>
