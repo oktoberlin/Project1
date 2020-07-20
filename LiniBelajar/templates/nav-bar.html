@@ -1,30 +1,26 @@
 {% load static %}
-<div class="shadow-sm">
-    <nav class="navbar navbar-expand-sm navbar-light bg-light mynav ml-auto mb-5 line-height">
-        <a class="navbar-brand" href="{% url 'community' %}" style="margin-bottom: -45px;">
-            <img src="{% static 'gambar/logo-nav.png' %}" width="150" class="d-inline-block align-center" alt="">
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-light mynav ml-auto line-height shadow-sm">
+        <a class="navbar-brand" href="{% url 'home' %}" style="margin-bottom: -50px;">
+            <img src="{% static 'gambar/logo-nav.png' %}" width="150" class="d-inline-block" alt="">
         </a>
+
+        <!-- <button class="btn btn-sm counseling shadow-sm rounded line-height d-inline-flex">
+        <a class="nav-link counselingitem" href="#" type="button">Kelas Gratis</a>
+        </button>
+        -->
+            
         
-        <ul class="navbar-nav ml-5 justify-content-between">
-            <li class="nav-item pt-2" style="margin-top:-9px; margin-left: 55px;">
-                <button class="btn btn-sm counseling shadow-sm rounded line-height">
-                <a class="nav-link counselingitem" href="#" type="button">Kelas Gratis</a>
-                </button>
-            </li>
-        </ul>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto color">
-                <li class="nav-item mr-3 ml-auto">
-                    <a class="nav-link pt-3 navfont" href="#">Konseling</a>
-                </li>
-
-                <li class="nav-item mr-3 ml-auto">
+               
+                <!--<li class="nav-item mt-2 mr-3 ml-auto">
                     <a class="nav-link pt-3 navfont" href="#">Event</a>
-                </li>
+                </li> -->
                 {% if user.is_authenticated %}
                 <li class="nav-item active mr-3 ml-auto">
                     <button type="button" class="btn btn-sm counseling shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'profile' %}">{{ user.username }}</a></button>
@@ -43,5 +39,4 @@
                 {% endif %}
             </ul>
         </div>
-    </nav>
-</div>    
+    </nav> 

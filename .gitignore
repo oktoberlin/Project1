@@ -1,5 +1,7 @@
 # Ignore files related to API keys
 .env
 
-__pychache__
+__pychache__/
 db.sqlite3
+
+node_modules/

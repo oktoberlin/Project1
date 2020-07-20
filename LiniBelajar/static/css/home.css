@@ -1,15 +1,62 @@
+/* LAYOUT */
+
+.btn {
+	flex: 1 1 1;
+	margin: 10px;
+	padding: 30px;
+	text-align: center;
+	text-transform: uppercase;
+	transition: 0.5s;
+	background-size: 200% auto;
+
+	border-radius: 10px;
+}
+
+.btn:hover {
+	background-position: right center;
+}
+
+.btn-1 {
+	background-image: linear-gradient(
+		to right,
+		#f6d365 0%,
+		#fda085 51%,
+		#f6d365 100%
+	);
+}
+
+.btn-2 {
+	background-image: linear-gradient(
+		to right,
+		#fbc2eb 0%,
+		#a6c1ee 51%,
+		#fbc2eb 100%
+	);
+}
+.btn-3 {
+	background-image: linear-gradient(
+		to right,
+		#ffecd2 0%,
+		#fcb69f 51%,
+		#ffecd2 100%
+	);
+}
+.feature {
+	margin-top: 100px;
+}
+
 .mynav {
 	background-color: white !important;
 }
 
 .line-height {
-	line-height: 14px;
+	line-height: 7px;
 	margin-top: 7px;
 	margin-bottom: 9px;
 }
 .line-height1 {
-	line-height: 7px;
-	margin-top: 7px;
+	line-height: 10px;
+	margin-top: 15px;
 	margin-bottom: 9px;
 }
 
@@ -37,7 +84,7 @@ h1 {
 }
 
 .counseling1 {
-	border-radius: 30px;
+	border-radius: 5px;
 	background: #8d54ff !important;
 	transition: all 0.3s ease 0s;
 }
@@ -51,7 +98,7 @@ h1 {
 .counselingitem1 {
 	color: white !important;
 	font-weight: bold;
-	font-size: 14px;
+	font-size: 20px;
 }
 .counselingitem:hover {
 	color: #8d54ff !important;
@@ -72,7 +119,6 @@ h1 {
 
 .study {
 	text-align: center;
-	margin-top: 30px;
 }
 
 img {
@@ -87,19 +133,14 @@ fieldset {
 	color: #7d3cff !important;
 }
 
-* {
-	padding: 0;
-	margin: 0;
-}
-
 html {
 	position: relative;
 	min-height: 100%;
-	font-size: 15px;
 }
 body {
 	/* Margin bottom by footer height */
 	margin-bottom: 120px;
+	font-size: calc(1em + 1vw);
 }
 .footer {
 	position: absolute;
@@ -173,7 +214,15 @@ body {
 
 .home-title {
 	color: #ffb60d;
-	font-size: 30px;
+	font-size: 20px;
+
+	position: absolute;
+	z-index: 999;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	top: 40%;
 }
 
 .fa {
@@ -199,3 +248,20 @@ body {
 	background: #3b5998;
 	color: white;
 }
+
+@media (min-width: 576px) {
+	html {
+		font-size: 1.25rem;
+	}
+}
+@media (min-width: 768px) {
+	html {
+		font-size: 1.5rem;
+	}
+}
+/*@media (min-width: 992px) {
+	html {
+		font-size: 1.75rem;
+	}
+}
+*/

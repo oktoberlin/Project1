@@ -1,28 +1,28 @@
 {% extends 'layout.html' %}
 {% load static %}
-
+   
 {% block content %}
-    
 
+{% include 'nav-bar.html' %} 
     
-    <h4 class="display-4 mt-5 text-center">Belajar Online untuk Indonesia Merdeka Belajar</h4>
-    <div class="text-center mt-5">
-        <button type="button" class="btn btn-sm counseling shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'community' %}">Komunitas LiniBelajar</a></button>
+    <!--<img class="img-fluid shadow" src="{% static 'gambar/learning-path.jpg' %}" width="1600px" style="margin-top: -40px;"> -->
+    <!-- <div>
+    <h4 class="text-center home-title">Belajar Online untuk Indonesia Merdeka Belajar</h4>
+    </div>
+    -->
+    <div class="text-center feature text-white">
+    <a class="btn btn-1">SHARING</a>
+    <a class="btn btn-2 mx-3">KELAS GRATIS</a>
+    <a class="btn btn-3">EVENT</a>
     </div>
 
-
-    <div class="study mb-3">
-        <img class="rounded img-fluid shadow" src="{% static 'gambar/learning-path.jpg' %}" width="1250">
-    </div>
-    <div class="shadow card mx-5 quiz-top">
-        <h4 class="display-4 pt-5 text-white text-center">Fun QUIZ</h4>
+    <!-- <div class="shadow card mx-5 quiz-top">
+        <h4 class="pt-5 text-white text-center">Fun QUIZ</h4>
         <h5 class="quiz text-center mt-2 pb-5">Tantang dirimu dengan QUIZ Sederhana ini &#128512</h5>
 
         <div class="text-center mt-1 mb-4">
             <button type="button" class="btn btn-sm quiz-button shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'quiz' %}">Coba Quiz</a></button>
         </div>
-    </div>
-
+    </div> -->
     
-
 {% endblock %}
