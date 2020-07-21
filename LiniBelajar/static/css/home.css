@@ -2,20 +2,27 @@
 	background-color: white !important;
 }
 
-.line-height {
-	line-height: 14px;
-	margin-top: 7px;
-	margin-bottom: 9px;
+.free-class-nav {
+	border-radius: 40px;
+	color: white !important;
+	background: #8d54ff !important;
+	transition: all 0.3s ease 0s;
+	line-height: 16px;
 }
-.line-height1 {
-	line-height: 7px;
-	margin-top: 7px;
-	margin-bottom: 9px;
+
+.free-class-nav:hover {
+	background: white !important;
+	color: #8d54ff !important;
+	border: 1px solid #8d54ff !important;
+}
+
+.toggler-font {
+	color: #8d54ff !important;
+	font-weight: bold;
 }
 
 .navfont {
 	color: #7d3cff !important;
-	font-weight: bold;
 	font-size: 18px;
 }
 .navfont:hover {
@@ -44,13 +51,11 @@ h1 {
 
 .counselingitem {
 	color: white !important;
-	font-weight: bold;
 	font-size: 18px;
 }
 
 .counselingitem1 {
 	color: white !important;
-	font-weight: bold;
 	font-size: 14px;
 }
 .counselingitem:hover {
@@ -73,10 +78,6 @@ h1 {
 .study {
 	text-align: center;
 	margin-top: 30px;
-}
-
-img {
-	margin-bottom: 50px;
 }
 
 fieldset {
