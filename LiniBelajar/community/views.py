@@ -14,7 +14,7 @@ def community(request):
     return render(request, 'community.html', context)
 
 
-class PostListView(LoginRequiredMixin, ListView):
+class PostListView(ListView):
     model = Post
     template_name = 'community.html'
     context_object_name = 'posts'
