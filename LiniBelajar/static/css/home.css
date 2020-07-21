@@ -1,3 +1,4 @@
+/* NAVBAR OPEN*/
 .mynav {
 	background-color: white !important;
 }
@@ -8,6 +9,7 @@
 	background: #8d54ff !important;
 	transition: all 0.3s ease 0s;
 	line-height: 16px;
+	font-size: 13px;
 }
 
 .free-class-nav:hover {
@@ -21,13 +23,20 @@
 	font-weight: bold;
 }
 
-.navfont {
-	color: #7d3cff !important;
-	font-size: 18px;
-}
-.navfont:hover {
+.toggler-font:hover {
 	color: #fabe3c !important;
+	transition: all 0.3s ease 0s;
 }
+
+@media only screen and (max-width: 600px) {
+	img {
+		width: 100px;
+	}
+	#navbarSupportedContent {
+		font-size: 13px;
+	}
+}
+/* NAVBAR CLOSED */
 
 h1 {
 	color: #7d3cff;
