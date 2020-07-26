@@ -3,18 +3,30 @@
 {% include 'nav-bar.html' %}
 
     {% include 'message.html' %}
-    <div class="text-center mb-4">
-        <button type="button" class="btn btn-sm counseling1 shadow-sm line-height1" style="border-radius: 40px;"><a class="nav-link counselingitem1 font-weight-bold" href="{% url 'post-create' %}">BUAT POST</a></button>
+    <!-- <div class="content-section">
+        <div class="media">
+            <img class="rounded-circle account-img m-2" width="70" src="{{ user.profile.image.url }}">
+            <div class="media-body">
+                <h4 class="account-heading">@{{ author.username }}</h4>
+                <p class="text-secondary">{{ user.email }}</p>
+            </div>
+        </div>
+        <div>
+            <h4>{{ view.kwargs.first_name }} {{ user.last_name }}</h4>
+        </div>
     </div>
-        
+    -->
+
+    <h5 class="text-center">Post oleh {{ view.kwargs.username }}</h5>    
     {% for post in posts %}
     <article class="media content-section border p-3 mb-3">
     <img class="rounded-circle article-img mr-2" width="40" src="{{ post.author.profile.image.url }}">
         <div class="media-body">
             <div class="article-metadata">
                 <div class="border-bottom mb-1">
-                    <h6><a class="mb-2 mt-0 article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a> <small class="text-muted"> oleh: <a class="mr-2" href="{% url 'user-profile' post.author.username %}">@{{ post.author }}</a>
+                    <h6><a class="mb-2 mt-0 article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a> <small class="text-muted">
                    ( {{ post.date_posted|timesince }} yang lalu )</small></a></h6>
+                    
                 </div>
                 <div>
                     <p class="article-content" style="font-size: 14px; text-align: justify; font-family: 'Roboto', sans-serif;">{{ post.content }}</p>

@@ -8,7 +8,7 @@
         <div class="media-body">
             <div class="article-metadata">
                 <div class="border-bottom mb-1">
-                    <h6><a class="mb-2 mt-0 article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a> <small class="text-muted"> oleh: <a class="mr-2" href="#">@{{ post.author }}</a>
+                    <h6><a class="mb-2 mt-0 article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a> <small class="text-muted"> oleh: <a class="mr-2" href="{% url 'user-profile' object.author.username %}">@{{ post.author }}</a>
                    ( {{ post.date_posted|timesince }} yang lalu )</small></a></h6>
                     
                 </div>
