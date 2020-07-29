@@ -30,7 +30,10 @@
 
 /* NAVBAR CLOSED */
 
-@media only screen and (max-width: 600px) {
+.article-title {
+	color: #7d3cff !important;
+}
+/*@media only screen and (max-width: 600px) {
 	.logo {
 		width: 100px;
 	}
@@ -40,8 +43,14 @@
 	.article-img {
 		width: 28px;
 	}
+	div.konten {
+		width: 230px;
+		padding: 1px;
+		word-break: break-all;
+		font-size: 13px;
+	}
 }
-
+*/
 h1 {
 	color: #7d3cff;
 }
@@ -212,4 +221,34 @@ body {
 .fa-facebook {
 	background: #3b5998;
 	color: white;
+}
+
+html {
+	font-size: 1.25rem;
+}
+
+@media (min-width: 320px) {
+	html {
+		font-size: 0.25rem;
+	}
+}
+@media (min-width: 768px) {
+	html {
+		font-size: 0.5rem;
+	}
+}
+@media (max-width: 992px) {
+	html {
+		font-size: 0.75rem;
+	}
+}
+@media (min-width: 993px) {
+	html {
+		font-size: 1rem;
+	}
+}
+@media (min-width: 1200px) {
+	html {
+		font-size: 1.25rem;
+	}
 }

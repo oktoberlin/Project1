@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'user.apps.UserConfig',
     'quiz.apps.QuizConfig',
+    'ckeditor',
     'community.apps.CommunityConfig',
     'crispy_forms',
     'django.contrib.admin',
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 
     # 'django.contrib.auth',
     # 'django.contrib.messages',
@@ -58,6 +60,11 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
 ]
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'width': 'auto',
+    },
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
