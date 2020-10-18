@@ -8,23 +8,24 @@
     </div>
         
     {% for post in posts %}
-    <article class="media content-section border-top border-primary p-2 pb-3">
-    <img class="img-fluid rounded-circle article-img mr-2 mt-1" width="40" src="{{ post.author.profile.image.url }}">
+    <article class="media content-section border-top border-primary pl-2 pb-3 pt-3 pr-4">
+    <img class="img-fluid rounded-circle article-img mr-2 mt-1" width="25" src="{{ post.author.profile.image.url }}">
         <div class="media-body">
-            <div class="article-metadata border-bottom">
+            <div class="article-metadata">
                 <div class="border-bottom mb-1">
-                    <h6 class="pr-2"><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h6>
+                    <h6 class="pr-2 font-weight-bold"><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h6>
                 </div>
 
-                <div>
+                <div class="text-justify">
                     {% if post.post_image.url is not null %}
                     <img class="img-fluid post_img rounded mx-auto d-block" src="{{ post.post_image.url }}">
                     {% endif %}
-                    <p class="article-content" style="font-size: 14px; text-align: justify; font-family: 'Roboto', sans-serif; width: 20px; padding-right:200px;">{{ post.content|safe }}</p>
+                    <p class="article-content">{{ post.content|safe|truncatewords:'100'|linebreaks }}<a href="{% url 'post-detail' post.id %}"> lebih detail...</a></p>
+                    
                 </div>
             </div>
-            <small class="text-muted mb-2 d-flex justify-content-end mt-1"><a class="mr-2" href="{% url 'user-profile' post.author.username %}">@{{ post.author }}</a>({{ post.date_posted|timesince }} yang lalu)
-            </small>
+            <small class="text-muted mb-2 d-flex justify-content-end mt-1"><span class="border-bottom"><a class="mr-2" href="{% url 'user-profile' post.author.username %}">@{{ post.author }}</a>({{ post.date_posted|timesince }} yang lalu)
+            </span></small>
 
         </div>
     </article>

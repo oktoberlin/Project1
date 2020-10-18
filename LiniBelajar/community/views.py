@@ -30,7 +30,7 @@ class UserProfileView(ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
 
-    def get_query_set(self):
+    def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get(
             'username'))
         return Post.objects.filter(author=user).order_by('-date_posted')
@@ -58,6 +58,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     fields = ['title', 'post_image', 'content']
     success_url = '/'
+    
 
     def form_valid(self, form):
         form.instance.author = self.request.user

@@ -118,11 +118,11 @@ fieldset {
 html {
 	position: relative;
 	min-height: 100%;
-	font-size: 15px;
 }
 body {
 	/* Margin bottom by footer height */
 	margin-bottom: 120px;
+ font-family: 'Quicksand', sans-serif;
 }
 .footer {
 	position: absolute;

@@ -10,11 +10,11 @@
         {% if post.post_image.url is not null %}
         <img class="img-fluid post_img rounded mx-auto d-block" width="600" src="{{ post.post_image.url }}">
         {% endif %}
-        <div>
+        <div class="px-2 text-justify">
             <p class="card-text text-justify">{{ object.content|safe }}</p>
             <article class="media content-section border-top d-flex justify-content-end mb-3">
-            <img class="rounded-circle article-img mr-2 mt-1" width="30" src="{{ object.author.profile.image.url }}">
-                <small class="text-muted"> oleh: <a class="mr-2" href="{% url 'user-profile' object.author.username %}">@{{ post.author }}</a>
+            <img class="rounded-circle article-img mr-2 mt-2" width="20" src="{{ object.author.profile.image.url }}">
+                <small class="text-muted mt-2"> oleh: <a class="mr-2" href="{% url 'user-profile' object.author.username %}">@{{ post.author }}</a>
                     ( {{ post.date_posted|timesince }} yang lalu )
                 </small>
             </article> 
