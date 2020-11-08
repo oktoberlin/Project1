@@ -39,3 +39,9 @@ def profile(request):
         'p_form': p_form
     }
     return render(request, 'profile.html', context)
+
+
+def get(self, request, *args, **kwargs):
+    if request.user.is_authenticated():
+        return redirect('community')
+    return super(LoginView, self).get(request, *args, **kwargs)
