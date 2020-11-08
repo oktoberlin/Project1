@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'user.apps.UserConfig',
     'quiz.apps.QuizConfig',
+    'api.apps.ApiConfig',
     'ckeditor',
     'community.apps.CommunityConfig',
     'crispy_forms',
@@ -47,7 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-
+    'rest_framework',
+    'corsheaders',
     # 'django.contrib.auth',
     # 'django.contrib.messages',
     'django.contrib.sites',
@@ -82,6 +84,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, '../frontend')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -166,7 +169,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static-root')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, '../frontend/build/static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
