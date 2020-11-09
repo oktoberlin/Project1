@@ -198,10 +198,4 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'oktoberlin@gmail.com'
 EMAIL_HOST_PASSWORD = 'okto2bebetteR'
 
-CORS_ORIGIN_WHITELIST = [
-
-    "http://localhost:3000",
-    "https://www.linibelajar.com",
-
-
-]
+CORS_ORIGIN_ALLOW_ALL = True
