@@ -48,7 +48,7 @@ class App extends React.Component {
   fetchTasks(){
     console.log('Fetching...')
 
-    fetch('http://127.0.0.1:8000/api/task-list/')
+    fetch('https://www.linibelajar.com/api/task-list/')
     .then(response => response.json())
     .then(data => 
       this.setState({
@@ -77,7 +77,7 @@ class App extends React.Component {
 
     var csrftoken = this.getCookie('csrftoken')
 
-    var url = 'http://127.0.0.1:8000/api/task-create/'
+    var url = 'https://www.linibelajar.com/api/task-create/'
 
     if(this.state.editing == true){
       url = `http://127.0.0.1:8000/api/task-update/${ this.state.activeItem.id}/`
@@ -121,7 +121,7 @@ class App extends React.Component {
   deleteItem(task){
     var csrftoken = this.getCookie('csrftoken')
 
-    fetch(`http://127.0.0.1:8000/api/task-delete/${task.id}/`, {
+    fetch(`https://www.linibelajar.com/api/task-delete/${task.id}/`, {
       method:'DELETE',
       headers:{
         'Content-type':'application/json',
