@@ -68,6 +68,8 @@ CKEDITOR_CONFIGS = {
     },
 }
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -98,9 +100,6 @@ TEMPLATES = [
     },
 ]
 
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
-)
 
 WSGI_APPLICATION = 'LiniBelajar.wsgi.application'
 
@@ -195,3 +194,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'oktoberlin@gmail.com'
 EMAIL_HOST_PASSWORD = 'okto2bebetteR'
+CORS_ORIGIN_WHITELIST = [
+
+    "http://localhost:3000",
+
+]
