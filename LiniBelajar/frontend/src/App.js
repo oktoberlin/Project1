@@ -80,7 +80,7 @@ class App extends React.Component {
     var url = 'https://www.linibelajar.com/api/task-create/'
 
     if(this.state.editing == true){
-      url = `http://127.0.0.1:8000/api/task-update/${ this.state.activeItem.id}/`
+      url = `https://www.linibelajar.com/api/task-update/${ this.state.activeItem.id}/`
       this.setState({
         editing:false
       })
@@ -138,7 +138,7 @@ class App extends React.Component {
 
     task.completed = !task.completed
     var csrftoken = this.getCookie('csrftoken')
-    var url = `http://127.0.0.1:8000/api/task-update/${task.id}/`
+    var url = `https://www.linibelajar.com/api/task-update/${task.id}/`
 
       fetch(url, {
         method:'POST',
