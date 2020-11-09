@@ -201,5 +201,7 @@ EMAIL_HOST_PASSWORD = 'okto2bebetteR'
 CORS_ORIGIN_WHITELIST = [
 
     "http://localhost:3000",
+    "https://www.linibelajar.com",
+
 
 ]
