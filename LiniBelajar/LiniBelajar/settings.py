@@ -171,7 +171,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static-root')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'frontend/build/static')
+    #os.path.join(BASE_DIR, 'frontend/build/static')
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
