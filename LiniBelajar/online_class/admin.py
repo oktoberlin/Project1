@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import daftar_pre_toefl 
 
-# Register your models here.
+
+admin.site.register(daftar_pre_toefl)

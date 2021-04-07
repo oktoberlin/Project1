@@ -9,9 +9,9 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('test/', TemplateView.as_view(template_name='index.html')),
     path('home/', include('home.urls'), name='home'),
-    path('daftar_kelas/', include('online_class.urls'), name='online_class'),
+    path('', include('online_class.urls'), name='online_class'),
     path('api/', include('api.urls')),
-    path('', include('community.urls'), name='community'),
+    path('komunitas/', include('community.urls'), name='community'),
     #path('komunitas/', include('community.urls')),
     path('react/', TemplateView.as_view(template_name='react.html')),
     path('quiz', include('quiz.urls'), name='quiz'),

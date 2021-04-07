@@ -1,11 +1,11 @@
 {% load static %}
 
     <nav class="navbar navbar-expand-sm navbar-light mynav shadow-sm mb-3 line-height">
-        <a class="navbar-brand mr-3" href="{% url 'community' %}">
+        <a class="navbar-brand mr-3" href="{% url 'daftar_kelas' %}">
             <img class="img-fluid logo" src="{% static 'gambar/logo-nav.png' %}" width="140" alt="linibelajar">
         </a>
 
-        <a class="nav-link free-class-nav font-weight-bold rounded ml-auto mr-2" href="#" type="button">EVENTS</a>
+        <a class="nav-link free-class-nav font-weight-bold rounded ml-auto mr-2" href="{% url 'community' %}" type="button">Join Komunitas</a>
         
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

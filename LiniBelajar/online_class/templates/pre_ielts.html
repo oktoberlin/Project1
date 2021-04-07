@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'nav-bar.html' %}
+{% load crispy_forms_tags %}
+<!--action="/thanks/" 
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit">Submit</button>
+</form>
+-->
+<div class="container mb-5 card shadow-sm p-3">
+    <div class="content-section px-5">
+        <form method="post" name="pre_ielts" class="mb-2 font-weight-bold">
+            
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4 text-center">Daftar Kelas Pre-IELTS</legend>
+                {% csrf_token %}
+                {{ form|crispy }}
+            </fieldset>
+            <div>    
+                <button type="submit" class="btn btn-outline-info mb-2">Daftar</button>
+            </div>
+            
+        </form>
+        
+    </div>
+</div>
+
+{% endblock %}
