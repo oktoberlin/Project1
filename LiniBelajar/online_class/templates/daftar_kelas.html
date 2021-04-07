@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'nav-bar.html' %}
+
+    
+    <h4 class="display-5 mt-3 text-center">Belajar Online untuk yang terkena dampak Covid-19</h4>
+    
+
+<!--
+    <div class="study mb-3">
+        <img class="rounded img-fluid shadow" src="{% static 'gambar/learning-path.jpg' %}" width="1250">
+    </div>
+    
+    <div class="shadow card mx-5 quiz-top">
+        <h4 class="display-4 pt-5 text-white text-center">Fun QUIZ</h4>
+        <h5 class="quiz text-center mt-2 pb-5">Tantang dirimu dengan QUIZ Sederhana ini &#128512</h5>
+
+        <div class="text-center mt-1 mb-4">
+            <button type="button" class="btn btn-sm quiz-button shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'quiz' %}">Coba Quiz</a></button>
+        </div>
+    </div>
+-->
+
+<div class="container">
+    <br>
+    <h4 class="text-center">Daftar Kelas</h2>
+	<br>
+	<div class="row row-cols-1 row-cols-md-2">
+        <div class="col mb-4 shadow-sm">
+          <div class="card">
+            <img src="{% static 'gambar/TOEFL.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">PRE-TOEFL</h5>
+              <p class="card-text">Kelas untuk belajar TOEFL untuk pemula</p>
+              <h6 class="card-price text-center">Rp15.000<span class="term">/pertemuan</span></h6>
+              
+              <div class="text-center">
+                <button type="button" class="btn btn-sm counseling shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'community' %}">Daftar</a></button>
+                </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col mb-4 shadow-sm">
+          <div class="card">
+            <img src="{% static 'gambar/todler.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">ENGLISH FOR TODLER</h5>
+              <p class="card-text">Kelas Bahasa Inggris untuk Anak</p>
+              <h6 class="card-price text-center">Rp15.000<span class="term">/pertemuan</span></h6>
+              <div class="text-center">
+                <button type="button" class="btn btn-sm counseling shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'community' %}">Daftar</a></button>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4 shadow-sm">
+          <div class="card">
+            <img src="{% static 'gambar/ielts.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">PRE-IELTS</h5>
+              <p class="card-text">Kelas untuk belajar IELTS untuk pemula</p>
+              <h6 class="card-price text-center">Rp15.000<span class="term">/pertemuan</span></h6>
+              <div class="text-center">
+                <button type="button" class="btn btn-sm counseling shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'community' %}">Daftar</a></button>
+                </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+</div>
+<div class="text-center mt-5 mb-5">
+    <button type="button" class="btn btn-sm counseling shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'community' %}">Join Komunitas LiniBelajar</a></button>
+</div>
+</div>
+ 
+
+
+{% endblock %}

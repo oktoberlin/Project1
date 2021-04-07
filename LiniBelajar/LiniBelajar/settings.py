@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'quiz.apps.QuizConfig',
     'api.apps.ApiConfig',
+    'online_class',
     'ckeditor',
     'community.apps.CommunityConfig',
     'crispy_forms',
