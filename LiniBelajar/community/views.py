@@ -16,6 +16,8 @@ def community(request):
     }
     return render(request, 'community.html', context)
 
+def about(request):
+    return render(request, 'about.html')
 
 class PostListView(ListView):
     model = Post

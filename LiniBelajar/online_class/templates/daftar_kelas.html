@@ -4,11 +4,11 @@
 {% block content %}
 {% include 'nav-bar.html' %}
 
-    
-    <h4 class="display-5 mt-3 text-center">Kelas Online untuk yang terkena dampak Covid-19</h4>
-    
 
-<!--
+    <h5 style="color:#8d54ff !important; font-size:50px;" class="display-5 mt-3 mb-3 shadown text-center">Untuk Indonesia Merdeka Belajar</h5>
+    
+   <!-- 
+
     <div class="study mb-3">
         <img class="rounded img-fluid shadow" src="{% static 'gambar/learning-path.jpg' %}" width="1250">
     </div>
@@ -28,13 +28,15 @@
     <h3 class="text-center">Daftar Kelas</h3>
 	<br>
 	<div class="row row-cols-1 row-cols-md-2">
-        <div class="col mb-4 shadow-sm">
-          <div class="card">
+        <div class="col mb-4">
+          <div class="card shadow">
             <img src="{% static 'gambar/TOEFL.jpg' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">PRE-TOEFL</h5>
+            <div class="card-body text-center">
+              <h4 class="card-title font-weight-bold" style="color:#8d54ff !important;">PRE-TOEFL</h4>
               <p class="card-text">Kelas untuk belajar TOEFL untuk pemula</p>
-              <h6 class="card-price text-center">Rp15.000<span class="term">/pertemuan</span></h6>
+              <small class="card-price text-center">10x pertemuan</small>
+              <h6 style="text-decoration: line-through;" class="card-price text-center font-italic text-danger mt-4">Rp35.000<small class="term">/pertemuan</small></h6>
+              <h5 class="card-price text-center mb-3" style="color:#8d54ff !important;">Rp15.000<small class="term">/pertemuan</small></h5>
               
               <div class="text-center">
                 <button type="button" class="btn btn-sm counseling shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'pre_toefl' %}">Daftar Sekarang</a></button>
@@ -43,26 +45,30 @@
             
           </div>
         </div>
-        <div class="col mb-4 shadow-sm">
-          <div class="card">
+        <div class="col mb-4">
+          <div class="card shadow">
             <img src="{% static 'gambar/todler.jpg' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">ENGLISH FOR TODLER</h5>
+            <div class="card-body text-center">
+              <h4 class="card-title font-weight-bold" style="color:#8d54ff !important;"">ENGLISH FOR TODDLER</h4>
               <p class="card-text">Kelas Bahasa Inggris untuk Anak</p>
-              <h6 class="card-price text-center">Rp15.000<span class="term">/pertemuan</span></h6>
+              <small class="card-price text-center">10x pertemuan</small>
+              <h6 style="text-decoration: line-through;" class="card-price text-center font-italic text-danger mt-4">Rp35.000<small class="term">/pertemuan</small></h6>
+              <h5 class="card-price text-center mb-3" style="color:#8d54ff !important;">Rp15.000<small class="term">/pertemuan</small></h5>
               <div class="text-center">
-                <button type="button" class="btn btn-sm counseling shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'english_todler' %}">Daftar Sekarang</a></button>
+                <button type="button" class="btn btn-sm counseling shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'english_toddler' %}">Daftar Sekarang</a></button>
                 </div>
             </div>
           </div>
         </div>
-        <div class="col mb-4 shadow-sm">
-          <div class="card">
+        <div class="col mb-4">
+          <div class="card shadow">
             <img src="{% static 'gambar/ielts.png' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">PRE-IELTS</h5>
+            <div class="card-body text-center">
+              <h4 class="card-title font-weight-bold" style="color:#8d54ff !important;">PRE-IELTS</h4>
               <p class="card-text">Kelas untuk belajar IELTS untuk pemula</p>
-              <h6 class="card-price text-center">Rp15.000<span class="term">/pertemuan</span></h6>
+              <small class="card-price text-center">10x pertemuan</small>
+              <h6 style="text-decoration: line-through;" class="card-price text-center font-italic text-danger mt-4">Rp35.000<small class="term">/pertemuan</small></h6>
+              <h5 class="card-price text-center mb-3" style="color:#8d54ff !important;">Rp15.000<small class="term">/pertemuan</small></h5>
               <div class="text-center">
                 <button type="button" class="btn btn-sm counseling shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'pre_ielts' %}">Daftar Sekarang</a></button>
                 </div>
