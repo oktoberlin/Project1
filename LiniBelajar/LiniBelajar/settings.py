@@ -48,9 +48,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
 
     'rest_framework',
     'corsheaders',
+    #'disqus',
 
     # 'django.contrib.auth',
     # 'django.contrib.messages',
@@ -206,3 +208,6 @@ CORS_ALLOW_METHODS = [
     'POST',
     'PUT',
 ]
+
+DISQUS_API_KEY = 'lIXM7wIxOBoFM1zuBeZjgWVtQTpgntUpxqS8RMZrNsY0fAIkw9l9kdUjy2yoMXlA'
+DISQUS_WEBSITE_SHORTNAME = 'linibelajar'
