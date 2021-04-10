@@ -11,6 +11,7 @@ urlpatterns = [
     path('home/', include('home.urls'), name='home'),
     path('about/', TemplateView.as_view(template_name='about.html')),
     path('', include('online_class.urls'), name='online_class'),
+    path('', include('user.urls')),
     path('api/', include('api.urls')),
     path('komunitas/', include('community.urls'), name='community'),
     #path('komunitas/', include('community.urls')),
