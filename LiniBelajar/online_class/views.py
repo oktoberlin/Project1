@@ -94,7 +94,7 @@ def english_todler_add(request):
             # ...
             # redirect to a new URL:
             
-            subject = "Pendaftaran Kelas English for Toddler"
+            subject = "Pendaftaran Kelas English Speaking"
             body = {
             'nama_lengkap': form.cleaned_data['nama_lengkap'],
             'email': form.cleaned_data['email'],
@@ -112,13 +112,13 @@ def english_todler_add(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
 
-            subject2 = "Pendaftaran Kelas English for Toddler berhasil!"
+            subject2 = "Pendaftaran Kelas Speaking berhasil!"
             email = form.cleaned_data.get('email')
             body2 = {
             'nama_lengkap': form.cleaned_data['nama_lengkap']
             }
             
-            message2 = "Halo, Terima kasih telah mendaftar. Pendaftaran Kelas English for Toddler anda telah berhasil. Tim kami akan segera menghubungi anda lewat Whatsapp Chat."
+            message2 = "Halo, Terima kasih telah mendaftar. Pendaftaran Kelas Speaking anda telah berhasil. Tim kami akan segera menghubungi anda lewat Whatsapp Chat."
             try:
                 send_mail(subject2, message2, settings.EMAIL_HOST_USER, [email], fail_silently=False)
             except BadHeaderError:
