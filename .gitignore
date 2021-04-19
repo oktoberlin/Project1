@@ -4,7 +4,7 @@
 __pychache__/
 db.sqlite3
 *.sqlite3
-
+/venv
 /.pnp
 .pnp.js
 
