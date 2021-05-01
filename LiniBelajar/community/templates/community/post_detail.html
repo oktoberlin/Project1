@@ -2,6 +2,7 @@
 {% block content %}
 {% include 'nav-bar.html' %}
 {% include 'message.html' %}
+<div class="container px-4 mb-2">
 <div class="card shadow-sm">
     <div class="card-header">
         <h4 class="mt-1 article-title text-center font-weight-bold">{{ post.title }}</h4> 
@@ -27,5 +28,6 @@
         </div>
 
     </div>
+</div>
 </div>
 {% endblock content %}
