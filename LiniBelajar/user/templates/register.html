@@ -2,13 +2,10 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
+{% include 'nav-bar.html' %}
+<div class="container card shadow border-0">
 
-    <div class="login-icon mb-3">
-        <img class="rounded img-fluid" src="{% static 'gambar/login-logo.jpeg' %}" width="80">
-    </div>
-<div class="container mb-5 mt-5 card shadow-sm p-3">
-
-    <div class="content-section px-5">
+    <div class="content-section px-3 my-2 pb-2">
         <form method="POST" class="mb-2 font-weight-bold">
             
             <fieldset class="form-group">
@@ -22,7 +19,7 @@
         </form>
         <div class="border-top pt-4">
             <small class="text-muted">
-                Sudah Punya Akun? <a class="ml-2" href="{% url 'login' %}">Login</a>
+                Sudah Punya Akun? <a class="free-class-nav font-weight-bold rounded p-2 mx-1" href="{% url 'login' %}">Login</a>
             </small>
         </div>
     </div>

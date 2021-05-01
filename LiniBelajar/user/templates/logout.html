@@ -1,13 +1,9 @@
 {% extends 'layout.html' %}
 {% block content %}
+{% include 'nav-bar.html' %}
 <div class="container mb-5 p-5 text-center">
 
     <h2 class="logout">Kamu telah Logout</h2>
 
-    <div class="border-top pt-3">
-        <button class="btn btn-primary">
-            <a class="text-white" href="{% url 'community' %}">HOME</a>
-        </button>
-    </div>
 </div>
 {% endblock %}
