@@ -7,7 +7,6 @@ from user import views as user_views
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('test/', TemplateView.as_view(template_name='index.html')),
     path('home/', include('home.urls'), name='home'),
     path('about/', TemplateView.as_view(template_name='about.html')),
     path('', include('community.urls'), name='community'),
