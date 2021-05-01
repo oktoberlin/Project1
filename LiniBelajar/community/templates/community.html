@@ -4,11 +4,13 @@
     
     
     {% include 'message.html' %}
+    <h4 style="color:#8d54ff !important;" class="display-5 mt-4 mb-3 text-center font-weight-bold">Untuk Indonesia Merdeka Belajar</h4>
     <div class="text-center mb-4">
         <button type="button" class="btn btn-sm counseling1 shadow-sm line-height1" style="border-radius: 40px;"><a class="nav-link counselingitem1 font-weight-bold" href="{% url 'post-create' %}"><i class="fas fa-plus-circle" aria-hidden="true"></i> Bagikan Postingan</a></button>
     </div>
     {% for post in posts %}
     <div class="container px-4 mb-2">
+        
     <div class="card shadow border-0">
         <div class="card-body">
     
