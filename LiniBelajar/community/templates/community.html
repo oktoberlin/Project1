@@ -20,10 +20,13 @@
         <div class="media-body">
             <div class="article-metadata">
                 <div class="border-bottom mb-1">
-                    <h6 class="pr-2 font-weight-bold"><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h6>
+                    <small class="pr-2"><a class="article-title center text-capitalize" href="{% url 'post-detail' post.id %}">{{ post.author.first_name }} {{ post.author.last_name }}</a></small>
                 </div>
 
-                <div class="text-justify">
+                <div class="text-justify pt-2">
+                    <div>
+                        <h5 class="font-weight-bold text-center"><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h5>
+                    </div>
                     {% if post.post_image.url is not null %}
                     <img class="img-fluid post_img rounded mx-auto d-block" src="{{ post.post_image.url }}">
                     {% endif %}
