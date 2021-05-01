@@ -16,9 +16,6 @@ def community(request):
     }
     return render(request, 'community.html', context)
 
-def about(request):
-    return render(request, 'about.html')
-
 class PostListView(ListView):
     model = Post
     template_name = 'community.html'
@@ -44,7 +41,7 @@ class PostDetailView(LoginRequiredMixin, DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'post_image', 'content']
+    fields = ['judul', 'upload_gambar', 'isi_konten']
     success_url = '/'
 
     def form_valid(self, form):
@@ -58,7 +55,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['title', 'post_image', 'content']
+    fields = ['judul', 'upload_gambar', 'isi_konten']
     success_url = '/'
     
 

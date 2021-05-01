@@ -5,14 +5,14 @@
 <div class="container px-4 mb-2">
 <div class="card shadow-sm">
     <div class="card-header">
-        <h4 class="mt-1 article-title text-center font-weight-bold">{{ post.title }}</h4> 
+        <h4 class="mt-1 article-title text-center font-weight-bold">{{ post.judul }}</h4> 
     </div>
     <div class="card-body">
-        {% if post.post_image.url is not null %}
-        <img class="img-fluid post_img rounded mx-auto d-block" width="600" src="{{ post.post_image.url }}">
+        {% if post.upload_gambar.url is not null %}
+        <img class="img-fluid post_img rounded mx-auto d-block" width="600" src="{{ post.upload_gambar.url }}">
         {% endif %}
         <div class="px-2 text-justify">
-            <p class="card-text text-justify">{{ object.content|safe }}</p>
+            <p class="card-text text-justify">{{ object.isi_konten|safe }}</p>
             <article class="media content-section border-top d-flex justify-content-end mb-3">
             <img class="rounded-circle article-img mr-2 mt-2" width="20" src="{{ object.author.profile.image.url }}">
                 <small class="text-muted mt-2"> oleh: <a class="mr-2" href="{% url 'user-profile' object.author.username %}">@{{ post.author }}</a>

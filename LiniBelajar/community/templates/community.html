@@ -24,12 +24,12 @@
                 <a class="stretched-link" href="{% url 'post-detail' post.id %}">
                 <div class="text-justify pt-2 border rounded border-primary px-3">
                     <div>
-                        <h5 class="font-weight-bold text-center"><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h5>
+                        <h5 class="font-weight-bold text-center"><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.judul }}</a></h5>
                     </div>
-                    {% if post.post_image.url is not null %}
-                    <img class="img-fluid post_img rounded mx-auto d-block" src="{{ post.post_image.url }}">
+                    {% if post.upload_gambar.url is not null %}
+                    <img class="img-fluid post_img rounded mx-auto d-block" src="{{ post.upload_gambar.url }}">
                     {% endif %}
-                    <p class="article-content">{{ post.content|safe|truncatewords:'100'|linebreaks }}<a href="{% url 'post-detail' post.id %}"> lebih detail...</a></p>
+                    <p class="article-content">{{ post.isi_konten|safe|truncatewords:'100'|linebreaks }}<a href="{% url 'post-detail' post.id %}"> lebih detail...</a></p>
                     
                 </div>
                 </a>
