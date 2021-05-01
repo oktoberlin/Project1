@@ -16,25 +16,31 @@
         </div>
     </div>
     -->
+    
+
+    
     <h5 class="text-center mb-3">Postingan oleh <span class="text-info">{{ view.kwargs.username }}</span></h5>
     {% for post in posts %}
+    <div class="container card shadow border-0 pt-3 mb-1">
+    
     <article class="media content-section border p-2 mb-3 pr-1">
     <img class="rounded-circle article-img mr-2" width="25" src="{{ post.author.profile.image.url }}">
         <div class="media-body pr-3">
             <div class="article-metadata">
                 <div class="border-bottom mb-1">
-                    <h6 class="font-weight-bold"><a class="mb-2 mt-0 article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a> <small class="text-muted">
+                    <h6 class="font-weight-bold"><a class="mb-2 mt-0 article-title" href="{% url 'post-detail' post.id %}">{{ post.judul }}</a> <small class="text-muted">
                    ( {{ post.date_posted|timesince }} yang lalu )</small></a></h6>
                     
                 </div>
                 <div class="text-justify">
-                    {% if post.post_image.url is not null %}
-                    <img class="img-fluid post_img rounded  mx-auto d-block" src="{{ post.post_image.url }}">
+                    {% if post.upload_gambar.url is not null %}
+                    <img class="img-fluid post_img rounded  mx-auto d-block" src="{{ post.upload_gambar.url }}">
                     {% endif %}
-                    <p class="article-content">{{ post.content|safe|truncatewords:'150'|linebreaks }}<a href="{% url 'post-detail' post.id %}"> lebih detail...</a></p>
+                    <p class="article-content">{{ post.isi_konten|safe|truncatewords:'150'|linebreaks }}<a href="{% url 'post-detail' post.id %}"> lebih detail...</a></p>
                 </div>
             </div>
         </div>
     </article>
+</div>
     {% endfor %}
 {% endblock %}
