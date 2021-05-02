@@ -49,8 +49,7 @@ def talkshow_add(request):
             'nama_lengkap': form.cleaned_data['nama_lengkap']
             }
             
-            message2 = "Terima kasih telah mendaftar. Pendaftaran Talkshow dengan tema Guru Penggerak dalam Gebrakan Merdeka Belajar telah berhasil. Berikut adalah link zoom meeting untuk hari Sabtu, 8 Mei 2021. Zoom Meeting: https://us02web.zoom.us/j/85349875762
-"
+            message2 = "Terima kasih telah mendaftar. Pendaftaran Talkshow dengan tema Guru Penggerak dalam Gebrakan Merdeka Belajar telah berhasil. Berikut adalah link zoom meeting untuk hari Sabtu, 8 Mei 2021. Zoom Meeting: https://us02web.zoom.us/j/85349875762"
             try:
                 send_mail(subject2, message2, settings.EMAIL_HOST_USER, [email], fail_silently=False)
             except BadHeaderError:
