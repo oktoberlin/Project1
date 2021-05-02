@@ -7,10 +7,12 @@ from user import views as user_views
 from django.views.generic import TemplateView
 
 urlpatterns = [
+    url(r'^lazy_tags/', include('lazy_tags.urls')),
     path('home/', include('home.urls'), name='home'),
     path('about/', TemplateView.as_view(template_name='about.html')),
     path('', include('community.urls'), name='community'),
     path('kelas-online/', include('online_class.urls'), name='online_class'),
+    path('talkshow/', include('event.urls'), name='talkshow'),
     path('', include('user.urls')),
     path('api/', include('api.urls')),
     #path('komunitas/', include('community.urls'), name='community'),

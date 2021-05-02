@@ -1,0 +1,19 @@
+<div class="container card shadow border-0 pt-3">
+    <div class="content-section px-5">
+        <form method="post" name="pre_ielts" class="mb-2 font-weight-bold">
+            
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4 text-center">Pendaftaran Talk Show</legend>
+                {% csrf_token %}
+                {{ form|crispy }}
+            </fieldset>
+            <div>    
+                <button type="submit" class="btn btn-outline-info mb-2">Daftar</button>
+            </div>
+            
+        </form>
+        
+    </div>
+</div>
+
+{% endblock %}
