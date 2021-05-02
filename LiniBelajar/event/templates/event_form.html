@@ -1,3 +1,10 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'nav-bar.html' %}
+{% load crispy_forms_tags %}
+
 <div class="container card shadow border-0 pt-3">
     <div class="content-section px-5">
         <form method="post" name="pre_ielts" class="mb-2 font-weight-bold">

@@ -7,6 +7,8 @@ from django.conf import settings
 from .forms import daftar_talkshow_form
 from django.core.mail import send_mail, BadHeaderError
 
+def thanks(request):
+    return render(request, 'thanks.html')
 
 def talkshow_add(request):
     # if this is a POST request we need to process the form data
@@ -29,14 +31,14 @@ def talkshow_add(request):
             body = {
             'nama_lengkap': form.cleaned_data['nama_lengkap'],
             'email': form.cleaned_data['email'],
-            'phone_number': form.cleaned_data['phone_number'],
+            'nomor_whatsapp': form.cleaned_data['nomor_whatsapp'],
             #'message': form.cleaned_data['message'],
             }
             message = "\n".join(body.values())
             
             
             messages.success(
-                request, f'Halo {username}, Data anda sukses tersimpan! Link Zoom meeting bisa di cek di email. Tim kami juga akan mengirim linknya melalui Whatsapp')
+                request, f'Halo {username}, Data anda sukses tersimpan.')
             try:
                 send_mail(subject, message, 'linibelajar@gmail.com',
                         ['marthasitanggang@ymail.com'])
@@ -55,7 +57,7 @@ def talkshow_add(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             
-            return redirect ("thanks")
+            return redirect ("event:thanks_talkshow")
             # register=form.save(commit=False)
             # register.nama_lengkap = request.POST.get('nama_lengkap')
             # register.email = request.POST.get('email')

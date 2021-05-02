@@ -63,7 +63,7 @@ def pre_toefl_add(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             
-            return redirect ("thanks")
+            return redirect ("online_class:thanks")
             # register=form.save(commit=False)
             # register.nama_lengkap = request.POST.get('nama_lengkap')
             # register.email = request.POST.get('email')
@@ -124,7 +124,7 @@ def english_todler_add(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
 
-            return redirect ("thanks")
+            return redirect ("online_class:thanks")
             # register=form.save(commit=False)
             # register.nama_lengkap = request.POST.get('nama_lengkap')
             # register.email = request.POST.get('email')
@@ -186,7 +186,7 @@ def pre_ielts_add(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
 
-            return redirect ("thanks")
+            return redirect ("online_class:thanks")
             # register=form.save(commit=False)
             # register.nama_lengkap = request.POST.get('nama_lengkap')
             # register.email = request.POST.get('email')
