@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'event',
     'online_class',
-    'lazy_tags',
     'ckeditor',
     'community.apps.CommunityConfig',
     'crispy_forms',
