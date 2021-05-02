@@ -10,7 +10,8 @@
         <form method="post" name="pre_ielts" class="mb-2 font-weight-bold">
             
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4 text-center">Pendaftaran Talk Show</legend>
+                <legend class="border-bottom mb-1 text-center">Pendaftaran Talk Show</legend>
+                <h5 class="text-center border border-primary p-2 mb-3">Tema: Guru Penggerak dalam Gebrakan Merdeka Belajar</h5>
                 {% csrf_token %}
                 {{ form|crispy }}
             </fieldset>
