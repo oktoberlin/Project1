@@ -7,5 +7,5 @@ class daftar_talkshow_form(forms.ModelForm):
     nomor_whatsapp = forms.CharField()
     #message = forms.CharField(widget = forms.Textarea)
     class Meta:
-        model= daftar_pre_toefl
+        model= daftar_talkshow
         fields=['nama_lengkap','email','nomor_whatsapp',]
