@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$i-+k7dqa8hj45!7-)-s7ti5&tlm5m)w3!jz^^u!xysu0il(yw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['167.99.64.21', 'linibelajar.com',
                  'www.linibelajar.com', 'localhost', '127.0.0.1']
@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'quiz.apps.QuizConfig',
     'api.apps.ApiConfig',
+    'event',
     'online_class',
+    'lazy_tags',
     'ckeditor',
     'community.apps.CommunityConfig',
     'crispy_forms',
