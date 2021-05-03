@@ -189,7 +189,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'community:community'
 
-LOGIN_URL = 'login'
+LOGIN_URL = 'user:login'
 
 SITE_ID = 2
 

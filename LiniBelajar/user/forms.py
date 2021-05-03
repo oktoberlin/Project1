@@ -5,18 +5,16 @@ from .models import Profile
 
 
 class RegisterUserForm(UserCreationForm):
-    email = forms.EmailField()
+    
     first_name = forms.CharField()
     last_name = forms.CharField()
-    terms = forms.BooleanField(
-        error_messages={'required': 'Persyaratan dan Kondisi belum dicentang.'},
-        label = "Disclaimer: Dengan memilih centang, anda menyetujui bahwa konten yang anda bagikan valid dan dipertanggungjawabkan penuh oleh akun anda. Linibelajar tidak bertanggungjawab atas ketidakvalidan info yang anda bagikan. Kami akan otomatis memblokir akun dengan konten SARA, provokasi dan pornografi."
-    )
+    email = forms.EmailField()
+    
 
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'username',
-                  'email', 'password1', 'password2', 'terms']
+                  'email', 'password1', 'password2']
 
 
 class UserUpdateForm(forms.ModelForm):

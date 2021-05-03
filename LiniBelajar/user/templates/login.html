@@ -8,33 +8,46 @@
 
 {% include 'nav-bar.html' %}
 {% include 'message.html' %}
+<div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+        <div class="user_card mt-5 pb-3">
+            <div class="d-flex justify-content-center mt-2">
 
-<div class="container card shadow border-0">
-    <div class="content-section px-5 py-4">
-        <form method="POST" class="mb-2 font-weight-bold">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4 text-center">Login</legend>
-                {{ form|crispy }}
-            </fieldset>
-            <div>
-                <button class="btn btn-outline-info mb-2" type="submit">Login</button>
-                <small class="text-muted ml-2"><a href="{% url 'password_reset' %}">Lupa Password?</a>
-                </small>
+
+                <h3 id="form-title">Login</h3>
             </div>
-            
-        </form>
-        <div class="border-top pt-2">
-            <small class="text-muted">
-                Belum Punya Akun? <a class="ml-2" href="{% url 'register' %}">Daftar di sini</a>
-            </small>
-        </div>
-        <small class="text-muted">
-            Atau
-        </small>
-        <div>
-        <a href="{% provider_login_url 'google' %}"><i class="fa fa-google"> Gmail</i>
-        </a>
+            <div class="d-flex justify-content-center form_container">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <div class="input-group mb-3">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+
+                        <input type="text" name="username" placeholder="Username..." class="form-control">
+                    </div>
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+
+                            <input type="password" name="password" placeholder="Password..." class="form-control" >
+                    </div>
+
+                        <div class="d-flex justify-content-center mt-3 login_container">
+                             <input class="btn login_btn font-weight-bold" type="submit" value="Login">
+                           </div>
+                </form>
+
+            </div>
+
+            <div class="mt-4">
+                <div class="d-flex justify-content-center links text-white">
+                    Belum punya akun? <a href="{% url 'user:register' %}" class="nav-link free-class-nav font-weight-bold rounded ml-2">Daftar</a>
+                </div>
+        
+            </div>
         </div>
     </div>
 </div>

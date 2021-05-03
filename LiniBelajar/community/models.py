@@ -17,7 +17,7 @@ class Post(models.Model):
         return self.judul
 
     def get_absolute_url(self):
-        return reverse('post-detail', kwargs={'pk': self.pk})
+        return reverse('community:post-detail', kwargs={'pk': self.pk})
 
     # def upload_image(self, filename):
     #    return 'post/{}/{}'.format(self.title, filename)
