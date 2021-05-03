@@ -38,7 +38,6 @@ class UserProfileView(ListView):
 class PostDetailView(DetailView):
     model = Post
 
-
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['judul', 'upload_gambar', 'isi_konten']

@@ -1,7 +1,6 @@
 from . import views
 from django.urls import path
-from .views import (PostListView, PostDetailView,
-                    PostCreateView, PostUpdateView, PostDeleteView, UserProfileView)
+from .views import *
 app_name = 'community'
 urlpatterns = [
     path('', PostListView.as_view(), name="community"),
