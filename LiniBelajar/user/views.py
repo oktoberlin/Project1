@@ -1,4 +1,4 @@
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model, authenticate, logout
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
@@ -64,6 +64,9 @@ def activate(request, uidb64, token):
     else:
         return HttpResponse('Link Aktivasi salah!')
 
+def logoutUser(request):
+	logout(request)
+	return redirect('community:community')
 @login_required
 def profile(request):
     if request.method == 'POST':
@@ -89,5 +92,5 @@ def profile(request):
 
 def get(self, request, *args, **kwargs):
     if request.user.is_authenticated():
-        return redirect('community')
+        return redirect('community:community')
     return super(LoginView, self).get(request, *args, **kwargs)
