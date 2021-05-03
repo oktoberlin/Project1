@@ -8,7 +8,7 @@ from .forms import daftar_talkshow_form
 from django.core.mail import send_mail, BadHeaderError
 
 def thanks(request):
-    return render(request, 'thanks.html')
+    return render(request, 'thanks-event.html')
 
 def talkshow_add(request):
     # if this is a POST request we need to process the form data
