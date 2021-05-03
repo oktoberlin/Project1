@@ -2,7 +2,7 @@ from . import views
 from django.urls import path
 from .views import (PostListView, PostDetailView,
                     PostCreateView, PostUpdateView, PostDeleteView, UserProfileView)
-
+app_name = 'community'
 urlpatterns = [
     path('', PostListView.as_view(), name="community"),
     path('user/<str:username>/', UserProfileView.as_view(), name="user-profile"),

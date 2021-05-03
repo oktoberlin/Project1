@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
-
+app_name = 'user'
 urlpatterns = [
-   #path('', views.login, name="login"),
+   path('logout/', views.logoutUser, name="logout"),
    path('activate/<uidb64>/<token>/',views.activate, name='activate'),
 ]

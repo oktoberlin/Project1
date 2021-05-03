@@ -1,7 +1,7 @@
 {% load static %}
 
     <nav class="navbar navbar-expand-sm navbar-light mynav shadow-sm mb-3 line-height">
-        <a class="navbar-brand mr-3" href="{% url 'community' %}">
+        <a class="navbar-brand mr-3" href="{% url 'community:community' %}">
             <img class="img-fluid logo" src="{% static 'gambar/logo-nav.png' %}" width="140" alt="linibelajar">
         </a>
 
@@ -21,7 +21,7 @@
                 </li>
 
                 <li class="nav-item active ml-auto">
-                    <a class="nav-link shadow-sm free-class-nav font-weight-bold rounded ml-auto mr-2" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    <a class="nav-link shadow-sm free-class-nav font-weight-bold rounded ml-auto mr-2" href="{% url 'user:logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </li>
                 {% else %}
                 <li class="nav-item active ml-auto">
