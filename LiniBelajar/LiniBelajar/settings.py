@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$i-+k7dqa8hj45!7-)-s7ti5&tlm5m)w3!jz^^u!xysu0il(yw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['167.99.64.21', 'linibelajar.com',
                  'www.linibelajar.com', 'localhost', '127.0.0.1']
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'user.apps.UserConfig',
     'quiz.apps.QuizConfig',
-    'api.apps.ApiConfig',
+    'postAPI',
     'event',
     'online_class',
     'ckeditor',
@@ -199,6 +199,12 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'linibelajar@gmail.com'
 EMAIL_HOST_PASSWORD = 'pflugwrmuymomkis'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+    ]
+}
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_METHODS = [

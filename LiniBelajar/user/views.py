@@ -1,3 +1,6 @@
+from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+UserModel = get_user_model()
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.shortcuts import get_current_site
