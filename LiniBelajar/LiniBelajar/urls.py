@@ -20,7 +20,7 @@ urlpatterns = [
     #path('komunitas/', include('community.urls'), name='community'),
     #path('komunitas/', include('community.urls')),
     path('react/', TemplateView.as_view(template_name='react.html')),
-    path('quiz', include('quiz.urls'), name='quiz'),
+    path('quizs', include('quiz.urls'), name='quiz'),
     path('admin/', admin.site.urls),
     #path('register/', user_views.register, name='register'),
     path('profile/', user_views.profile, name='profile'),
