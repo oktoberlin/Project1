@@ -13,6 +13,7 @@ urlpatterns = [
     path('kelas-online/', include('online_class.urls'), name='online_class'),
     path('talkshow/', include('event.urls'), name='event'),
     path('', include('user.urls')),
+    path('', include('testvue.urls')),
     path('api/posts/', include('postAPI.urls')),
     path('api/user/', include('userAPI.urls')),
     path('api/user/profile/', include('profileAPI.urls')),

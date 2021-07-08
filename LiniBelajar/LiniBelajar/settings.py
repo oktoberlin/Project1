@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'postAPI',
     'event',
     'online_class',
+
+    'testvue',
     'ckeditor',
     'community.apps.CommunityConfig',
     'crispy_forms',
