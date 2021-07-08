@@ -1,12 +1,10 @@
-from LiniBelajar.online_class.models import Question, Questionnaire
-from django.forms import formset_factory
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.conf import settings
-from .forms import daftar_pre_toefl_form, daftar_english_todler_form, daftar_pre_ielts_form, AnswerForm
+from .forms import daftar_pre_toefl_form, daftar_english_todler_form, daftar_pre_ielts_form
 from django.core.mail import send_mail, BadHeaderError
 
 
@@ -201,34 +199,3 @@ def pre_ielts_add(request):
         form = daftar_pre_ielts_form()
 
     return render(request, 'pre_ielts.html', {'form': form})
-
-
-def answerpage(request, questionnaire_pk):
-    AnswerFormSet = formset_factory(AnswerForm, extra=0)
-    questions = Question.objects.filter(questionnaire=questionnaire_pk)
-    qname = Questionnaire.objects.get(id=questionnaire_pk)
-
-    if request.method == 'POST':
-        answer_formset = AnswerFormSet(request.POST)
-        if answer_formset.is_valid():
-            for answer_form in answer_formset:
-                if answer_form.is_valid():
-                    instance = answer_form.save(commit=False)
-                    instance.fieldValue = answer_form.cleaned_data.get('fieldValue')
-                    instance.save()
-            return redirect('main:calcs')
-        else:
-            return redirect('main:home')
-    else:
-        quest_id = request.session.get('questionnaire_key', defaultValue)
-        question_data = [{'question': question,
-                        'questionnaire_key': quest_id} for question in questions]
-        answer_formset = AnswerFormSet(initial=question_data)
-
-    combined = zip(questions, answer_formset)
-    context = {
-        'combined': combined,
-        'answer_formset': answer_formset,
-        'qname': qname,
-    }
-    return render(request, 'main/questionnaire.html', context)

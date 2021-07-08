@@ -1,6 +1,5 @@
 from django import forms
-from django.forms.widgets import ChoiceWidget, HiddenInput, RadioSelect
-from .models import daftar_pre_toefl, daftar_english_todler, daftar_pre_ielts, Questionnaire
+from .models import daftar_pre_toefl, daftar_english_todler, daftar_pre_ielts
 
 class daftar_pre_toefl_form(forms.ModelForm):
     nama_lengkap=forms.CharField()
@@ -28,14 +27,3 @@ class daftar_pre_ielts_form(forms.ModelForm):
     class Meta:
         model= daftar_pre_ielts
         fields=['nama_lengkap','email','phone_number',]
-
-
-
-class AnswerForm(forms.ModelForm):
-    class Meta:
-        model = Questionnaire
-        exclude = ['']
-        widgets = {
-            'field1': RadioSelect(choices=ChoiceWidget, attrs={'required': 'True'}),
-            'field2': HiddenInput,
-            }
