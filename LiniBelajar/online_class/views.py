@@ -47,7 +47,7 @@ def pre_toefl_add(request):
                 request, f'Halo {username}, Data anda sukses tersimpan!')
             try:
                 send_mail(subject, message, 'linibelajar@gmail.com',
-                        ['marthasitanggang@ymail.com'])
+                        ['oktoberlin@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             
@@ -108,7 +108,7 @@ def english_todler_add(request):
 
             try:
                 send_mail(subject, message, 'linibelajar@gmail.com',
-                        ['marthasitanggang@ymail.com'])
+                        ['oktoberlin@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
 
@@ -170,7 +170,7 @@ def pre_ielts_add(request):
 
             try:
                 send_mail(subject, message, 'linibelajar@gmail.com',
-                        ['marthasitanggang@ymail.com'])
+                        ['oktoberlin@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
 
