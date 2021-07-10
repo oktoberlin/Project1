@@ -5,9 +5,11 @@ from .models import Profile
 
 
 class RegisterUserForm(UserCreationForm):
-    email = forms.EmailField()
+    
     first_name = forms.CharField()
     last_name = forms.CharField()
+    email = forms.EmailField()
+    
 
     class Meta:
         model = User

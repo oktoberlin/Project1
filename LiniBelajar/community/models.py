@@ -7,17 +7,17 @@ from ckeditor.fields import RichTextField
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=100, blank=True)
-    content = RichTextField(blank=True, null=True)
-    post_image = models.ImageField(upload_to='foto-post', blank=True)
+    judul = models.CharField(max_length=100, blank=True)
+    isi_konten = RichTextField(blank=True, null=True)
+    upload_gambar = models.ImageField(upload_to='foto-post', blank=True)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        return self.judul
 
     def get_absolute_url(self):
-        return reverse('post-detail', kwargs={'pk': self.pk})
+        return reverse('community:post-detail', kwargs={'pk': self.pk})
 
     # def upload_image(self, filename):
     #    return 'post/{}/{}'.format(self.title, filename)
@@ -32,4 +32,4 @@ class Post(models.Model):
             width = 500
             output_size = (height, width)
             img_post.thumbnail(output_size)
-            img_post.post_save(self.post_image.path)
+            img_post.post_save(self.upload_gambar.path)

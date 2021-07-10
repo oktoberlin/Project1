@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+{% include 'nav-bar.html' %}
+
+    <div id="try-vue">
+		<span v-for="item in message">
+			message: [[ item.text ]] id: [[ item.id ]]
+		</span>
+		<button class="btn btn-primary" @click="tryClick">Count [[ count ]]</button>
+    </div>
+
+	<script src="https://unpkg.com/vue@3.0.11/dist/vue.global.prod.js"></script>
+		<script>
+			const app = Vue.createApp({
+				delimiters: ["[[", "]]"],
+				data() {
+					return {
+					message: [
+						{id:0, text:'how are you?'},
+					],
+					count: 4
+					};
+				},
+				methods: {
+					tryClick() {
+						this.count++
+					}
+				}
+				
+			});
+			app.mount("#try-vue");
+			</script>
+  
+{% endblock %}

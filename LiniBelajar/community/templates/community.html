@@ -1,33 +1,46 @@
 {% extends 'layout.html' %}
 {% block content %}
 {% include 'nav-bar.html' %}
-
+    
+    
     {% include 'message.html' %}
+    <h4 style="color:#8d54ff !important;" class="display-5 mt-4 mb-3 text-center font-weight-bold">Untuk Indonesia Merdeka Belajar</h4>
     <div class="text-center mb-4">
-        <button type="button" class="btn btn-sm counseling1 shadow-sm line-height1" style="border-radius: 40px;"><a class="nav-link counselingitem1 font-weight-bold" href="{% url 'post-create' %}">BUAT POST</a></button>
+        <button type="button" class="btn btn-sm counseling1 shadow-sm line-height1" style="border-radius: 40px;"><a class="nav-link counselingitem1 font-weight-bold" href="{% url 'community:post-create' %}"><i class="fas fa-plus-circle" aria-hidden="true"></i> Bagikan Postingan</a></button>
     </div>
-        
     {% for post in posts %}
-    <article class="media content-section border-top border-primary pl-2 pb-3 pt-3 pr-4">
+    <div class="container px-4 mb-2">
+        
+    <div class="card post-hover shadow border-0">
+        <div class="card-body">
+    
+    <article class="media content-section ">
     <img class="img-fluid rounded-circle article-img mr-2 mt-1" width="25" src="{{ post.author.profile.image.url }}">
         <div class="media-body">
             <div class="article-metadata">
-                <div class="border-bottom mb-1">
-                    <h6 class="pr-2 font-weight-bold"><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h6>
+                <div class="mb-1">
+                    <small class="pr-2"><a class="article-title center text-capitalize" href="{% url 'community:post-detail' post.id %}">{{ post.author.first_name }} {{ post.author.last_name }}</a></small>
                 </div>
-
-                <div class="text-justify">
-                    {% if post.post_image.url is not null %}
-                    <img class="img-fluid post_img rounded mx-auto d-block" src="{{ post.post_image.url }}">
+                <a class="stretched-link hover-shadow" href="{% url 'community:post-detail' post.id %}">
+                <div class="text-justify pt-2 border rounded border-primary px-3">
+                    <div>
+                        <h5 class="font-weight-bold text-center"><a class="article-title" href="{% url 'community:post-detail' post.id %}">{{ post.judul }}</a></h5>
+                    </div>
+                    {% if post.upload_gambar.url is not null %}
+                    <img class="img-fluid post_img rounded mx-auto d-block" src="{{ post.upload_gambar.url }}">
                     {% endif %}
-                    <p class="article-content">{{ post.content|safe|truncatewords:'100'|linebreaks }}<a href="{% url 'post-detail' post.id %}"> lebih detail...</a></p>
+                    <p class="article-content">{{ post.isi_konten|safe|truncatewords:'100'|linebreaks }}<a href="{% url 'community:post-detail' post.id %}"> lebih detail...</a></p>
                     
                 </div>
+                </a>
             </div>
-            <small class="text-muted mb-2 d-flex justify-content-end mt-1"><span class="border-bottom"><a class="mr-2" href="{% url 'user-profile' post.author.username %}">@{{ post.author }}</a>({{ post.date_posted|timesince }} yang lalu)
+            <small class="text-muted mb-2 d-flex justify-content-end mt-1"><span class="border-bottom"><a class="mr-2" href="{% url 'community:user-profile' post.author.username %}">@{{ post.author }}</a>({{ post.date_posted|timesince }} yang lalu)
             </span></small>
 
         </div>
     </article>
+</div>
+</div>
+    </div>
     {% endfor %}
 {% endblock %}

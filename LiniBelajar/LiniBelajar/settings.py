@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'user.apps.UserConfig',
     'quiz.apps.QuizConfig',
-    'api.apps.ApiConfig',
+    'postAPI',
+    'event',
+    'online_class',
     'ckeditor',
     'community.apps.CommunityConfig',
     'crispy_forms',
@@ -47,9 +49,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
 
     'rest_framework',
     'corsheaders',
+    #'disqus',
 
     # 'django.contrib.auth',
     # 'django.contrib.messages',
@@ -86,7 +90,6 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'frontend/build')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -169,24 +172,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static-root')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+   os.path.join(BASE_DIR, 'static-root'),
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-# try:
-#    from .local_settings import *
-# except ImportError:
-#    pass
+try:
+   from .local_settings import *
+except ImportError:
+   pass
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL = 'community'
+LOGIN_REDIRECT_URL = 'community:community'
 
-LOGIN_URL = 'login'
+LOGIN_URL = 'user:login'
 
 SITE_ID = 2
 
@@ -194,7 +197,24 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'oktoberlin@gmail.com'
-EMAIL_HOST_PASSWORD = 'okto2bebetteR'
+EMAIL_HOST_USER = 'linibelajar@gmail.com'
+EMAIL_HOST_PASSWORD = 'pflugwrmuymomkis'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+    ]
+}
 
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+DISQUS_API_KEY = 'lIXM7wIxOBoFM1zuBeZjgWVtQTpgntUpxqS8RMZrNsY0fAIkw9l9kdUjy2yoMXlA'
+DISQUS_WEBSITE_SHORTNAME = 'linibelajar'

@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'nav-bar.html' %}
+
+    <style>
+      .card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+    </style>
+    
+    
+   <!-- 
+
+    <div class="study mb-3">
+        <img class="rounded img-fluid shadow" src="{% static 'gambar/learning-path.jpg' %}" width="1250">
+    </div>
+    
+    <div class="shadow card mx-5 quiz-top">
+        <h4 class="display-4 pt-5 text-white text-center">Fun QUIZ</h4>
+        <h5 class="quiz text-center mt-2 pb-5">Tantang dirimu dengan QUIZ Sederhana ini &#128512</h5>
+
+        <div class="text-center mt-1 mb-4">
+            <button type="button" class="btn btn-sm quiz-button shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'quiz' %}">Coba Quiz</a></button>
+        </div>
+    </div>
+-->
+
+<div class="container px-4">
+  <h4 style="color:#8d54ff !important;" class="display-5 mt-4 mb-3 text-center font-weight-bold">Untuk Indonesia Merdeka Belajar</h4>
+	<div class="card-deck">
+        <div class="card shadow">
+          <img src="{% static 'gambar/ielts.png' %}" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h4 class="card-title font-weight-bold" style="color:#8d54ff !important;">PRE-IELTS</h4>
+            <p class="card-text">Kelas untuk belajar IELTS untuk pemula</p>
+            <small class="card-price text-center">10x pertemuan</small>
+            <h6 style="text-decoration: line-through;" class="card-price text-center font-italic text-danger mt-2">Rp.400.000</h6>
+              <h5 class="card-price text-center mb-3 mt-2" style="color:#8d54ff !important;">Rp.150.000</h5>
+
+            <div class="text-center">
+              <button type="button" class="btn btn-sm counseling shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'online_class:pre_ielts' %}">Daftar Sekarang</a></button>
+              </div>
+          </div>
+        </div>
+        <div class="card shadow">
+          <img src="{% static 'gambar/TOEFL.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h4 class="card-title font-weight-bold" style="color:#8d54ff !important;">PRE-TOEFL</h4>
+            <p class="card-text">Kelas untuk belajar TOEFL untuk pemula</p>
+            <small class="card-price text-center">10x pertemuan</small>
+            <h6 style="text-decoration: line-through;" class="card-price text-center font-italic text-danger mt-2">Rp.400.000</h6>
+              <h5 class="card-price text-center mb-3 mt-2" style="color:#8d54ff !important;">Rp.150.000</h5>
+            
+            <div class="text-center">
+              <button type="button" class="btn btn-sm counseling shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'online_class:pre_toefl' %}">Daftar Sekarang</a></button>
+              </div>
+          </div>  
+        </div>
+        
+        
+        <div class="card shadow">
+          <img src="{% static 'gambar/todler.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h4 class="card-title font-weight-bold" style="color:#8d54ff !important;">SPEAKING</h4>
+            <p class="card-text">Kelas Speaking dimulai dari dasar</p>
+            <small class="card-price text-center">10x pertemuan</small>
+            <h6 style="text-decoration: line-through;" class="card-price text-center font-italic text-danger mt-2">Rp.400.000</h6>
+              <h5 class="card-price text-center mb-3 mt-2" style="color:#8d54ff !important;">Rp.150.000</h5>
+              
+            <div class="text-center">
+              <button type="button" class="btn btn-sm counseling shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'online_class:english_toddler' %}">Daftar Sekarang</a></button>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+ 
+
+
+{% endblock %}
