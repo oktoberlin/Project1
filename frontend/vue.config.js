@@ -1,27 +1,38 @@
+const BundleTracker = require("webpack-bundle-tracker");
+
 module.exports = {
-    publicPath: process.env.NODE_ENV === 'production' ? '/static/dist/' : 'http://127.0.0.1:8080',
-    outputDir: '../LiniBelajar/static/dist',
-    indexPath: '../../templates/base-vue.html', // relative to outputDir!
+  // on Windows you might want to set publicPath: "http://127.0.0.1:8080/"
+  publicPath: process.env.NODE_ENV === 'production' ? '/static/dist/' : 'http://127.0.0.1:8080',
+  outputDir: "./dist/",
 
-    chainWebpack: config => {
-        /*
-        The arrow function in writeToDisk(...) tells the dev server to write
-        only index.html to the disk.
+  chainWebpack: (config) => {
+    config
+      .plugin("BundleTracker")
+      .use(BundleTracker, [{ filename: "./webpack-stats.json" }]);
 
-        The indexPath option (see above) instructs Webpack to also rename
-        index.html to base-vue.html and save it to Django templates folder.
+    config.output.filename("bundle.js");
 
-        We don't need other assets on the disk (CSS, JS...) - the dev server
-        can serve them from memory.
+    config.optimization.splitChunks(false);
 
-        See also:
-        https://cli.vuejs.org/config/#indexpath
-        https://webpack.js.org/configuration/dev-server/#devserverwritetodisk-
-        */
-        config.devServer
-            .public('http://127.0.0.1:8080')
-            .hotOnly(true)
-            .headers({"Access-Control-Allow-Origin": "*"})
-            .writeToDisk(filePath => filePath.endsWith('index.html'));
-    }
-}
+    config.resolve.alias.set("__STATIC__", "static");
+
+    config.devServer
+      // the first 3 lines of the following code have been added to the configuration
+      .public("http://127.0.0.1:8080")
+      .host("127.0.0.1")
+      .port(8080)
+      .hotOnly(true)
+      .watchOptions({ poll: 1000 })
+      .https(false)
+      .disableHostCheck(true)
+      .headers({ "Access-Control-Allow-Origin": ["*"] });
+  }
+
+  // uncomment before executing 'npm run build'
+  // css: {
+  //     extract: {
+  //       filename: 'bundle.css',
+  //       chunkFilename: 'bundle.css',
+  //     },
+  // }
+};

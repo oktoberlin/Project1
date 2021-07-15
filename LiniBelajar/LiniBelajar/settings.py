@@ -55,6 +55,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
+    'webpack_loader',
     #'disqus',
 
     # 'django.contrib.auth',
@@ -177,7 +178,14 @@ STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR, 'static'),
+   os.path.join(BASE_DIR, "frontend/dist"),
 ]
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'dist/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'frontend', 'webpack-stats.json')
+    }
+}
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
