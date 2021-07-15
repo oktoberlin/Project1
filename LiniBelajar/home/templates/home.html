@@ -1,28 +1,643 @@
-{% extends 'layout.html' %}
+{% include 'layout.html' %}
 {% load static %}
 
 {% block content %}
     
+    <!--
+<section>
+        <div class="study mb-3">
+            <img class="img-fluid" src="{% static 'gambar/learning-path.jpg' %}" width="100%" style="filter: brightness(65%);">
+            <h4 class="display-4 text-center carousel-caption hero" style="top:30%; height:0; color: white; filter: brightness(1.5);">
+                <span style="text-shadow: #7d3cff 2px 2px 5px;">Temukan gaya belajar terbaikmu di sini...</span>
+            </h4>
+           
+        </div>
+        <div class="text-center mt-5">
+            <button type="button" class="btn btn-sm counseling shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'community:community' %}">Komunitas LiniBelajar</a></button>
+        </div>
+    </section>
 
+    -->
     
-    <h4 class="display-4 mt-5 text-center">Belajar Online untuk Indonesia Merdeka Belajar</h4>
-    <div class="text-center mt-5">
-        <button type="button" class="btn btn-sm counseling shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'community:community' %}">Komunitas LiniBelajar</a></button>
+    
+<!-- ***** Preloader Start ***** -->
+<div id="preloader">
+    <div class="jumper">
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
+</div>  
+<!-- ***** Preloader End ***** -->
 
 
-    <div class="study mb-3">
-        <img class="rounded img-fluid shadow" src="{% static 'gambar/learning-path.jpg' %}" width="1250">
-    </div>
-    <div class="shadow card mx-5 quiz-top">
-        <h4 class="display-4 pt-5 text-white text-center">Fun QUIZ</h4>
-        <h5 class="quiz text-center mt-2 pb-5">Tantang dirimu dengan QUIZ Sederhana ini &#128512</h5>
-
-        <div class="text-center mt-1 mb-4">
-            <button type="button" class="btn btn-sm quiz-button shadow-sm rounded line-height"><a class="nav-link counselingitem" href="{% url 'quiz' %}">Coba Quiz</a></button>
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="#" class="logo">
+                        <img src="{% static 'gambar/logo-nav.png' %}" width="120px" alt="linibelajar"/>
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="#welcome" class="active">Home</a></li>
+                        <li><a href="#features">About</a></li>
+                        <li><a href="#work-process">Learning Process</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#pricing-plans">Pricing</a></li>
+                        <li><a href="#blog">Community</a></li>
+                        <li><a href="#contact-us">Contact Us</a></li>
+                        <li class="nav-item active ml-auto mb-1">
+                            <a class="nav-link free-class-nav font-weight-bold rounded pt-0" href="{% url 'user:login' %}" type="button"><i class="fas fa-sign-in-alt"></i> Login</a>
+                            
+                        </li>
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
         </div>
     </div>
+</header>
+<!-- ***** Header Area End ***** -->
 
+<!-- ***** Welcome Area Start ***** -->
+<div class="welcome-area" id="welcome">
+
+    <!-- ***** Header Text Start ***** -->
+    <div class="header-text">
+        <div class="container">
+            <div class="row">
+                <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                    <h1>We provide the best <strong>strategy</strong><br>to find your <strong>best learning style</strong></h1>
+                    <p>LiniBelajar adalah platform yang memberikan pengalaman belajar yang menarik dengan gaya belajar yang cocok untuk anda.</p>
+                    <a href="#features" class="main-button-slider">Discover More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Header Text End ***** -->
+</div>
+<!-- ***** Welcome Area End ***** -->
+
+<!-- ***** Features Small Start ***** -->
+<section class="section home-feature">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <!-- ***** Features Small Item Start ***** -->
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+                        <div class="features-small-item">
+                            <div class="icon">
+                                <i><img src="{% static 'images/featured-item-01.png' %}" alt=""></i>
+                            </div>
+                            <h5 class="features-title">Modern Strategy</h5>
+                            <p>Temukan learning path yang sesuai dengan gaya belajarmu</p>
+                        </div>
+                    </div>
+                    <!-- ***** Features Small Item End ***** -->
+
+                    <!-- ***** Features Small Item Start ***** -->
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
+                        <div class="features-small-item">
+                            <div class="icon">
+                                <i><img src="{% static 'images/featured-item-01.png' %}" alt=""></i>
+                            </div>
+                            <h5 class="features-title">Best Material Lesson</h5>
+                            <p>Anda akan belajar dengan materi yang disajikan secara matang dan menyenangkan</p>
+                        </div>
+                    </div>
+                    <!-- ***** Features Small Item End ***** -->
+
+                    <!-- ***** Features Small Item Start ***** -->
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
+                        <div class="features-small-item">
+                            <div class="icon">
+                                <i><img src="{% static 'images/featured-item-01.png' %}" alt=""></i>
+                            </div>
+                            <h5 class="features-title">Ultimate Community</h5>
+                            <p>Temukan komunitas yang bisa membantu anda untuk membantu dan berbagi pengetahuan anda</p>
+                        </div>
+                    </div>
+                    <!-- ***** Features Small Item End ***** -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Features Small End ***** -->
+
+<!-- ***** Features Big Item Start ***** -->
+<section class="section padding-top-70 padding-bottom-0" id="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-12 col-sm-12 align-self-center" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                <img src="{% static 'images/left-image.png' %}" class="rounded img-fluid d-block mx-auto" alt="App">
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-top-fix">
+                <div class="left-heading">
+                    <h2 class="section-title">Berdiskusi dengan tutor pendamping</h2>
+                </div>
+                <div class="left-text">
+                    <p>Tutor pendamping akan membantu untuk menjelaskan sejauh mana kemampuan anda serta strategy kedepannya.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hr"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Features Big Item End ***** -->
+
+<!-- ***** Features Big Item Start ***** -->
+<section class="section padding-bottom-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-bottom-fix">
+                <div class="left-heading">
+                    <h2 class="section-title">Maksimalkan hasil belajar anda dengan berdiskusi di forum dan komunitas</h2>
+                </div>
+                <div class="left-text">
+                    <p>Forum dan komunitas dapat membantu anda untuk menyelesaikan setiap permasalahan yang anda alami selama belajar.</p>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                <img src="{% static 'images/right-image.png' %}" class="rounded img-fluid d-block mx-auto" alt="App">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Features Big Item End ***** -->
+
+<!-- ***** Home Parallax Start ***** -->
+<section class="mini" id="work-process">
+    <div class="mini-content">
+        <div class="container">
+            <div class="row">
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="info">
+                        <h1>Learning Process</h1>
+                        <p>Learning process akan memastikan progress belajar anda yang maksimal dan konsisten.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ***** Mini Box Start ***** -->
+            <div class="row">
+                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                    <a href="#" class="mini-box">
+                        <i><img src="{% static 'images/work-process-item-01.png' %}" alt=""></i>
+                        <strong>Register</strong>
+                        <span>Mendaftarkan akun linibelajar anda</span>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                    <a href="#" class="mini-box">
+                        <i><img src="{% static 'images/work-process-item-01.png' %}" alt=""></i>
+                        <strong>Choose Tutor</strong>
+                        <span>Tutor yang membantu proses belajar</span>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                    <a href="#" class="mini-box">
+                        <i><img src="{% static 'images/work-process-item-01.png' %}" alt=""></i>
+                        <strong>Discuss</strong>
+                        <span>Berdiskusi dengan Tutor Pendamping</span>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                    <a href="#" class="mini-box">
+                        <i><img src="{% static 'images/work-process-item-01.png' %}" alt=""></i>
+                        <strong>Approve</strong>
+                        <span>Anda siap belajar di linibelajar</span>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                    <a href="#" class="mini-box">
+                        <i><img src="{% static 'images/work-process-item-01.png' %}" alt=""></i>
+                        <strong>Ask question</strong>
+                        <span>Tutor siap menjawab pertayaan</span>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                    <a href="#" class="mini-box">
+                        <i><img src="{% static 'images/work-process-item-01.png' %}" alt=""></i>
+                        <strong>Join Community</strong>
+                        <span>Sharing pengetahuan</span>
+                    </a>
+                </div>
+            </div>
+            <!-- ***** Mini Box End ***** -->
+        </div>
+    </div>
+</section>
+<!-- ***** Home Parallax End ***** -->
+
+<!-- ***** Testimonials Start ***** -->
+<section class="section" id="testimonials">
+    <div class="container">
+        <!-- ***** Section Title Start ***** -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="center-heading">
+                    <h2 class="section-title">What do they say?</h2>
+                </div>
+            </div>
+            <div class="offset-lg-3 col-lg-6">
+                <div class="center-text">
+                    <p>Berikut testimoni mereka setelah belajar dengan kami</p>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Section Title End ***** -->
+
+        <div class="row">
+            <!-- ***** Testimonials Item Start ***** -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="team-item">
+                    <div class="team-content">
+                        <i><img src="{% static 'images/testimonial-icon.png' %}" alt=""></i>
+                        <p>Saya sangat terbantu dan nyaman belajar selama proses belajar. Banyak insight yang selama ini saya belum pernah dapatkan sebelumnya. Terima kasih linibelajar telah membantu proses belajar saya.</p>
+                        <div class="user-image">
+                            <img src="http://placehold.it/60x60" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="user-name">Catherine Soft</h3>
+                            <span>SMA Negeri 1 Dolok Panribuan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ***** Testimonials Item End ***** -->
+            
+            <!-- ***** Testimonials Item Start ***** -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="team-item">
+                    <div class="team-content">
+                        <i><img src="{% static 'images/testimonial-icon.png' %}" alt=""></i>
+                        <p>Awalnya saya sempat bingung bagaimana belajar IELTS dari awal. Saya bersyukur saya akhirnya menyadari bahwa belajar IELTS di linibelajar telah mengubah pola pikir saya ke arah yang lebih baik.</p>
+                        <div class="user-image">
+                            <img src="http://placehold.it/60x60" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="user-name">Calvin</h3>
+                            <span>Universitas Padjadjaran</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ***** Testimonials Item End ***** -->
+            
+            <!-- ***** Testimonials Item Start ***** -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="team-item">
+                    <div class="team-content">
+                        <i><img src="{% static 'images/testimonial-icon.png' %}" alt=""></i>
+                        <p>Saya membutuhkan pengalaman belajar TOEFL yang sesuai dengan kemampuan dan gaya belajar saya. Linibelar telah membantu saya hingga saya bisa lebih percaya diri dalam menyelesaikan soal-soal test TOEFL.</p>
+                        <div class="user-image">
+                            <img src="http://placehold.it/60x60" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="user-name">David Martin</h3>
+                            <span>Karyawaan Perusahaan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ***** Testimonials Item End ***** -->
+        </div>
+    </div>
+</section>
+<!-- ***** Testimonials End ***** -->
+
+<!-- ***** Pricing Plans Start ***** -->
+<section class="section colored" id="pricing-plans">
+    <div class="container">
+        <!-- ***** Section Title Start ***** -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="center-heading">
+                    <h2 class="section-title">Pricing</h2>
+                </div>
+            </div>
+            <div class="offset-lg-3 col-lg-6">
+                <div class="center-text">
+                    <p>Biaya membership linibelajar</p>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Section Title End ***** -->
+
+        <div class="row">
+            <!-- ***** Pricing Item Start ***** -->
+            <div class="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+                <div class="pricing-item">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Free</h3>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price-wrapper">
+                            <span class="currency">Rp.</span>
+                            <span class="price">0</span>
+                            <span class="period">setelah belajar 3 hari</span>
+                        </div>
+                        <ul class="list">
+                            <li class="active">1 Kelas</li>
+                            <li class="active">Placement test</li>
+                            <li class="active">Join Community</li>
+                            <li>Tutor support</li>
+                            <li>Unlimited Discussion</li>
+                            <li>24/7 Tutor</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#" class="main-button">Purchase Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- ***** Pricing Item End ***** -->
+
+            <!-- ***** Pricing Item Start ***** -->
+            <div class="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
+                <div class="pricing-item active">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Premium</h3>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price-wrapper">
+                            <span class="currency">Rp.</span>
+                            <span class="price">500.000</span>
+                            <span class="period">monthly</span>
+                        </div>
+                        <ul class="list">
+                            <li class="active">3 Kelas</li>
+                            <li class="active">Placement test</li>
+                            <li class="active">Join Community</li>
+                            <li>Tutor support</li>
+                            <li>Unlimited Discussion</li>
+                            <li>24/7 Tutor</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#" class="main-button">Purchase Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- ***** Pricing Item End ***** -->
+
+            <!-- ***** Pricing Item Start ***** -->
+            <div class="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
+                <div class="pricing-item">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Advanced</h3>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price-wrapper">
+                            <span class="currency">Rp.</span>
+                            <span class="price">1.000.000</span>
+                            <span class="period">monthly</span>
+                        </div>
+                        <ul class="list">
+                            <li class="active">Unlimited Kelas</li>
+                            <li class="active">Placement test</li>
+                            <li class="active">Join Community</li>
+                            <li>Tutor support</li>
+                            <li>Unlimited Discussion</li>
+                            <li>24/7 Tutor</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#" class="main-button">Purchase Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- ***** Pricing Item End ***** -->
+        </div>
+    </div>
+</section>
+<!-- ***** Pricing Plans End ***** -->
+
+<!-- ***** Counter Parallax Start ***** -->
+<section class="counter">
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="count-item decoration-bottom">
+                        <strong>20</strong>
+                        <span>Kelas</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="count-item decoration-top">
+                        <strong>63</strong>
+                        <span>Happy Member</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="count-item decoration-bottom">
+                        <strong>18</strong>
+                        <span>Tutor Pendamping</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="count-item">
+                        <strong>120</strong>
+                        <span>Community Members</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Counter Parallax End ***** -->   
+
+<!-- ***** Blog Start ***** -->
+<section class="section" id="blog">
+    <div class="container">
+        <!-- ***** Section Title Start ***** -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="center-heading">
+                    <h2 class="section-title">Community</h2>
+                </div>
+            </div>
+            <div class="offset-lg-3 col-lg-6">
+                <div class="center-text">
+                    <p>Berbagi pengalaman dan pengetahuan adalah salah satu proses belajar yang efektif.</p>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Section Title End ***** -->
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="blog-post-thumb">
+                    <div class="img">
+                        <img src="{% static 'images/blog-item-01.png' %}" alt="">
+                    </div>
+                    <div class="blog-content">
+                        <h3>
+                            <a href="#">Forum di setiap kelas</a>
+                        </h3>
+                        <div class="text">
+                           Anda bisa bertanya dan menjawab di forum yang disediakan di setiap kelas yang anda ambil.
+                        </div>
+                        <a href="#" class="main-button">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="blog-post-thumb">
+                    <div class="img">
+                        <img src="{% static 'images/blog-item-02.png' %}" alt="">
+                    </div>
+                    <div class="blog-content">
+                        <h3>
+                            <a href="#">Global Community</a>
+                        </h3>
+                        <div class="text">
+                            Anda bisa berkontribusi di komunitas dari semua member kelas.
+                        </div>
+                        <a href="#" class="main-button">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="blog-post-thumb">
+                    <div class="img">
+                        <img src="{% static 'images/blog-item-03.png' %}" alt="">
+                    </div>
+                    <div class="blog-content">
+                        <h3>
+                            <a href="#">Follow member yang anda inginkan</a>
+                        </h3>
+                        <div class="text">
+                            Dapatkan informasi dan notifikasi setiap kali member yang anda ikuti memposting sesuatu di komunitas.
+                        </div>
+                        <a href="#" class="main-button">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Blog End ***** -->
+
+<!-- ***** Contact Us Start ***** -->
+<section class="section colored" id="contact-us">
+    <div class="container">
+        <!-- ***** Section Title Start ***** -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="center-heading">
+                    <h2 class="section-title">Talk To Us</h2>
+                </div>
+            </div>
+            <div class="offset-lg-3 col-lg-6">
+                <div class="center-text">
+                    <p>Hubungi kami untuk info lebih lanjut</p>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Section Title End ***** -->
+
+        <div class="row">
+            <!-- ***** Contact Text Start ***** -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <h5 class="margin-bottom-30">Keep in touch</h5>
+                <div class="contact-text">
+                    <p>Jl. Siwalankerto, Permain III, No. I/6, Kec. Wonocolo, Surabaya, Jawa Timur, 60236
+                    <br>Indonesia</p>
+                    <p>Dilarang menjual materi pembelajaran baik soft copy maupun hard copy. Terima Kasih.</p>
+                </div>
+            </div>
+            <!-- ***** Contact Text End ***** -->
+
+            <!-- ***** Contact Form Start ***** -->
+            <div class="col-lg-8 col-md-6 col-sm-12">
+                <div class="contact-form">
+                    <form id="contact" action="" method="get">
+                      <div class="row">
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                          <fieldset>
+                            <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
+                          </fieldset>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                          <fieldset>
+                            <input name="email" type="email" class="form-control" id="email" placeholder="E-Mail Address" required="">
+                          </fieldset>
+                        </div>
+                        <div class="col-lg-12">
+                          <fieldset>
+                            <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
+                          </fieldset>
+                        </div>
+                        <div class="col-lg-12">
+                          <fieldset>
+                            <button type="submit" id="form-submit" class="main-button">Send Message</button>
+                          </fieldset>
+                        </div>
+                      </div>
+                    </form>
+                </div>
+            </div>
+            <!-- ***** Contact Form End ***** -->
+        </div>
+    </div>
+</section>
+<!-- ***** Contact Us End ***** -->
+
+<!-- ***** Footer Start ***** -->
+<footer>
+    <div class="container">
+        <!--
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <ul class="social">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        -->
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="copyright">Copyright &copy; 2021 Linibelajar</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="{% static 'js/jquery-2.1.0.min.js' %}"></script>
+
+<!-- Bootstrap -->
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+<!-- Plugins -->
+<script src="{% static 'js/scrollreveal.min.js' %}"></script>
+<script src="{% static 'js/waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'js/imgfix.min.js' %}"></script> 
+
+<!-- Global Init -->
+<script src="{% static 'js/custom.js' %}"></script>
     
 
 {% endblock %}

@@ -99,7 +99,6 @@ h1 {
 
 .study {
 	text-align: center;
-	margin-top: 30px;
 }
 
 fieldset {
@@ -118,11 +117,10 @@ fieldset {
 html {
 	position: relative;
 	min-height: 100%;
-	margin-bottom: auto;
 }
 body {
 	/* Margin bottom by footer height */
-	
+	margin-bottom: 120px;
  font-family: 'Quicksand', sans-serif;
 }
 .footer {
@@ -231,19 +229,19 @@ html {
 @media (min-width: 320px) {
 	html {
 		font-size: 0.25rem;
-		
 	}
-	
-
 }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
 	html {
 		font-size: 0.5rem;
-		
 	}
-	
+	.hero {
+		font-size: 30px;
+		top:20%;
+	}
 }
 @media (max-width: 992px) {
+	
 	html {
 		font-size: 0.75rem;
 	}
