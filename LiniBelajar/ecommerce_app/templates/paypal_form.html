@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Make Payment{% endblock %}
+{% load static %}
+{% include 'nav-bar.html' %}
+{% block content %}
+  <div>
+    <h4>Pay with PayPal</h4>
+    {{ form.render }}
+  </div>
+
+{% endblock %}

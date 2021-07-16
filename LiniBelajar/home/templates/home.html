@@ -49,11 +49,10 @@
                         <li><a href="#work-process">Learning Process</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
                         <li><a href="#pricing-plans">Pricing</a></li>
-                        <li><a href="#blog">Community</a></li>
-                        <li><a href="#contact-us">Contact Us</a></li>
+                        <li><a href="{% url 'community:community' %}">Community</a></li>
+                        <a href="{% url 'online_class:online_class' %}" class="main-button-slider">Daftar Kelas</a>
                         <li class="nav-item active ml-auto mb-1">
-                            <a class="nav-link free-class-nav font-weight-bold rounded pt-0" href="{% url 'user:login' %}" type="button"><i class="fas fa-sign-in-alt"></i> Login</a>
-                            
+                            <a class="nav-link free-class-nav font-weight-bold rounded pt-0" href="{% url 'user:login' %}" type="button"><i class="fas fa-sign-in-alt"></i> Login</a> 
                         </li>
                     </ul>
                     <a class='menu-trigger'>
@@ -77,7 +76,7 @@
                 <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
                     <h1>We provide the best <strong>strategy</strong><br>to find your <strong>best learning style</strong></h1>
                     <p>LiniBelajar adalah platform yang memberikan pengalaman belajar yang menarik dengan gaya belajar yang cocok untuk anda.</p>
-                    <a href="#features" class="main-button-slider">Discover More</a>
+                    <a href="{% url 'user:register' %}" class="main-button-slider">Signup here</a>
                 </div>
             </div>
         </div>
@@ -170,6 +169,7 @@
                 </div>
                 <div class="left-text">
                     <p>Forum dan komunitas dapat membantu anda untuk menyelesaikan setiap permasalahan yang anda alami selama belajar.</p>
+                    <a href="{% url 'community:community' %}" class="main-button-slider">Join our Community</a>
                 </div>
             </div>
             <div class="col-lg-1"></div>
@@ -351,7 +351,7 @@
                         <div class="price-wrapper">
                             <span class="currency">Rp.</span>
                             <span class="price">0</span>
-                            <span class="period">setelah belajar 3 hari</span>
+                            <span class="period">gratis 3 hari pertama</span>
                         </div>
                         <ul class="list">
                             <li class="active">1 Kelas</li>
@@ -385,7 +385,7 @@
                             <li class="active">3 Kelas</li>
                             <li class="active">Placement test</li>
                             <li class="active">Join Community</li>
-                            <li>Tutor support</li>
+                            <li class="active">Tutor support</li>
                             <li>Unlimited Discussion</li>
                             <li>24/7 Tutor</li>
                         </ul>
@@ -413,9 +413,9 @@
                             <li class="active">Unlimited Kelas</li>
                             <li class="active">Placement test</li>
                             <li class="active">Join Community</li>
-                            <li>Tutor support</li>
-                            <li>Unlimited Discussion</li>
-                            <li>24/7 Tutor</li>
+                            <li class="active">Tutor support</li>
+                            <li class="active">Unlimited Discussion</li>
+                            <li class="active">24/7 Tutor</li>
                         </ul>
                     </div>
                     <div class="pricing-footer">
