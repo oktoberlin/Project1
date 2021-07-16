@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'postAPI',
     'event',
     'online_class',
+    'ecommerce_app',
 
     'testvue',
     'ckeditor',
@@ -55,6 +56,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
+    #'djpaypal',
+    'paypal.standard.ipn',
     #'disqus',
 
     # 'django.contrib.auth',
@@ -220,3 +223,11 @@ CORS_ALLOW_METHODS = [
 
 DISQUS_API_KEY = 'lIXM7wIxOBoFM1zuBeZjgWVtQTpgntUpxqS8RMZrNsY0fAIkw9l9kdUjy2yoMXlA'
 DISQUS_WEBSITE_SHORTNAME = 'linibelajar'
+
+#PAYPAL_CLIENT_ID = 'AXheZMTo8WzCfU0jsemSyBeuufsNqo22lq4vopnpDBvBve77_nrsZiAxoHAkIrWkBIBoeo1ZwcQUh72m'
+#PAYPAL_CLIENT_SECRET = 'EJ1sik9Q8Ysl54o79iNXcX9ZcBqeF8RJ68ZWc38L_0otxLy2zsRAGEgnFSJuQwIFMG8zcfiew62IU7kW'
+#PAYPAL_MODE = "sandbox"
+#PAYPAL_WEBHOOK_ID = '5AU00193J01372056'
+PAYPAL_RECEIVER_EMAIL = 'sb-nktuo6818983@business.example.com'
+
+PAYPAL_TEST = True

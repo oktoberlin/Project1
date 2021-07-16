@@ -7,7 +7,6 @@ from django.conf import settings
 from .forms import daftar_pre_toefl_form, daftar_english_todler_form, daftar_pre_ielts_form
 from django.core.mail import send_mail, BadHeaderError
 
-
 def daftar_kelas(request):
     return render(request, 'daftar_kelas.html')
 
