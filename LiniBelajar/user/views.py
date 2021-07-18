@@ -18,7 +18,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import *
 from .forms import RegisterUserForm, UserUpdateForm, ProfileUpdateForm
-
+from store.models import Customer
 
 
 def registerPage(request):
@@ -33,6 +33,7 @@ def registerPage(request):
                 user.is_active = False
                 user.save()
                 username = form.cleaned_data.get('username')
+
                 messages.success(
                     request, f'Hi {username}, Email Aktivasi Akun anda telah terkirim.')
                 

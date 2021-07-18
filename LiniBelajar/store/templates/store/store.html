@@ -1,0 +1,205 @@
+{% extends 'store/main.html' %} {% load static %} {% block content %}
+<div class="text-center my-4 overflow-auto pt-2 px-4 search-wrapper">
+    <form class="overflow-auto p-0 form-search" method="GET" action="">
+        <input name="search" style="display: inline-block"
+            class="form-control rounded-0 float-left ml-5 mr-0 col-lg-10 border-info search"
+            aria-describedby="button-addon2" type="text" placeholder="What are you looking for?" />
+        <button class="btn btn-outline-info ml-0 float-left btn-search" type="submit" id="button-addon2">
+            Search
+        </button>
+    </form>
+</div>
+
+<div class="alert alert-success px-2 py-0 mt-0 mb-0 mr-auto hidden text-center" id="cart-alert" role="alert">
+    Succes add item to cart!
+</div>
+
+{% if messages %} {% for message in messages %}
+<div class="alert alert-danger px-2 py-0 mt-0 mb-0 mr-auto text-center" id="cart-alert" role="alert">
+    {{message}}
+</div>
+{% endfor %} {% endif %}
+
+<div class="row">
+    {% for product in products %}
+    <div class="col-lg-4">
+        <!-- <img class="thumbnail" src="https://via.placeholder.com/640x360.png" alt=""> -->
+        <img class="thumbnail img-fluid w-100" src="{{ product.imageURL }}" alt="" />
+        <div class="box-element product">
+            <h6><strong>{{ product.name|truncatechars:20 }}</strong></h6>
+            <hr />
+            <button class="btn btn-outline-secondary add-btn update-cart" data-product="{{product.id}}"
+                data-action="add" data-url="{% url 'store:update_item' %}">
+                Add to Cart
+            </button>
+            <button type="button" class="btn btn-outline-success btn-detail" data-url="{% url 'store:show_detail' %}"
+                data-product="{{product.id}}" data-toggle="modal" data-target="#detailModal">
+                View
+            </button>
+            <h5 class="d-inline float-right">
+                Rp
+                <script>
+                    rupiah("{{ product.price|floatformat:0 }}");
+                </script>
+            </h5>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Pagination -->
+<div class="row my-4">
+    <div class="col-lg-12 d-flex">
+        <div class="mx-auto">
+            {% if search %}
+            <ul class="pagination">
+                <!-- non-search-pagination -->
+                {% if page == 1 %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="">First</a>
+                </li>
+                <li class="page-item disabled">
+                    <a class="page-link" href="">&laquo;</a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="{% url 'store:store' %}?page=1&search={{search}}">First</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link"
+                        href="{% url 'store:store' %}?page={{products.previous_page_number}}&search={{search}}">&laquo;</a>
+                </li>
+                {% endif %}
+
+                <!-- number-pagination -->
+
+                {% for i in show_page_num %} {% if page == i %}
+                <li class="page-item active">
+                    <a class="page-link" href="{% url 'store:store' %}?page={{i}}&search={{search}}">{{i}}</a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="{% url 'store:store' %}?page={{i}}&search={{search}}">{{i}}</a>
+                </li>
+                {% endif %} {% endfor %}
+
+                <!-- search-pagination (Last and Next)-->
+
+                {% if page == products.paginator.num_pages %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="">&laquo;</a>
+                </li>
+                <li class="page-item disabled">
+                    <a class="page-link" href="">Last</a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a class="page-link"
+                        href="{% url 'store:store' %}?page={{products.next_page_number}}&search={{search}}">&raquo;</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link"
+                        href="{% url 'store:store' %}?page={{products.paginator.num_pages}}&search={{search}}">Last</a>
+                </li>
+                {% endif %}
+            </ul>
+
+            {% else %}
+
+            <ul class="pagination">
+                <!-- non-search-pagination -->
+                {% if page == 1 %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="">First</a>
+                </li>
+                <li class="page-item disabled">
+                    <a class="page-link" href="">&laquo;</a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="{% url 'store:store' %}?page=1">First</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link"
+                        href="{% url 'store:store' %}?page={{products.previous_page_number}}">&laquo;</a>
+                </li>
+                {% endif %}
+
+                <!-- number-pagination -->
+
+                {% for i in show_page_num %} {% if page == i %}
+                <li class="page-item active">
+                    <a class="page-link" href="{% url 'store:store' %}?page={{i}}">{{i}}</a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="{% url 'store:store' %}?page={{i}}">{{i}}</a>
+                </li>
+                {% endif %} {% endfor %}
+
+                <!-- search-pagination (Last and Next)-->
+
+                {% if page == products.paginator.num_pages %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="">&laquo;</a>
+                </li>
+                <li class="page-item disabled">
+                    <a class="page-link" href="">Last</a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="{% url 'store:store' %}?page={{products.next_page_number}}">&raquo;</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="{% url 'store:store' %}?page={{products.paginator.num_pages}}">Last</a>
+                </li>
+                {% endif %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Detail Modal -->
+<!-- Modal -->
+<div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detail-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="detail-title"></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <img class="thumbnail h-100" id="detail-image" src="" alt="" />
+                    </div>
+                    <div class="col-lg-6">
+                        <table class="table">
+                            <tr>
+                                <td><strong>Description</strong></td>
+                                <td>:</td>
+                                <td id="detail-description"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Price</strong></td>
+                                <td>:</td>
+                                <td>
+                                    <h3 id="detail-price"></h3>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="detail-to-add" class="btn btn-primary update-cart" data-product=""
+                    data-action="add" data-url="{% url 'store:update_item' %}">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -8,6 +8,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('', include('home.urls'), name='home'),
+    path('store/', include('store.urls', namespace='store')),
     path('ecommerce/', include('ecommerce_app.urls')),
     path('paypal/', include('paypal.standard.ipn.urls')),
     path('about/', TemplateView.as_view(template_name='about.html')),
