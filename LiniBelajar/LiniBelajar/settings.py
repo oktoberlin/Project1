@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'event',
     'online_class',
     'ecommerce_app',
+    'store',
 
     'testvue',
     'ckeditor',

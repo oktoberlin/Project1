@@ -22,7 +22,7 @@ class Post(models.Model):
     # def upload_image(self, filename):
     #    return 'post/{}/{}'.format(self.title, filename)
 
-    def post_save():
+    def post_save(self):
         super().post_save()
 
         img_post = Image.open(self.image.path)
