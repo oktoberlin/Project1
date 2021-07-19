@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from django.core import serializers
 from django.core.paginator import Paginator
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.http import Http404
@@ -49,7 +50,7 @@ def store(request):
 
     return render(request, 'store/store.html', context)
 
-
+@login_required
 def cart(request):
 
     data = cartData(request)
